@@ -3,6 +3,7 @@ using PresentationLayer.Applications.ApplicationTypes;
 using PresentationLayer.Classes;
 using PresentationLayer.People;
 using PresentationLayer.Properties;
+using PresentationLayer.TestTypes;
 using PresentationLayer.Users;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,10 @@ namespace PresentationLayer
         private bool _sidebarExpanded = false;
         private bool _homeCollapsible = true;
         private Dictionary<string, Form> _ChildForm = new Dictionary<string, Form>();
-        public enum  EnForm { ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo , UpdateApplicationTypeInfo }
+        public enum  EnForm 
+        {
+            ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo , UpdateApplicationTypeInfo , ManageTestTypes , CreateTestTypeInfo , UpdateTestTypeInfo 
+        }
 
         private Form _PushForm(EnForm enform)
         {
@@ -66,6 +70,15 @@ namespace PresentationLayer
 
                 case EnForm.UpdateApplicationTypeInfo:
                     return new Applications.ApplicationTypes.frmShowCreateUpdateApplicationTypeInfo(frmShowManageApplicationTypesList.SelectedRow);
+
+                case EnForm.ManageTestTypes:
+                    return new TestTypes.frmShowManageTestTypeList();
+
+                case EnForm.CreateTestTypeInfo:
+                    return new TestTypes.frmShowCreateUpdateTestTypeInfo();
+
+                case EnForm.UpdateTestTypeInfo:
+                    return new TestTypes.frmShowCreateUpdateTestTypeInfo(frmShowManageTestTypeList.SelectdRow);
                     
                 case EnForm.Login:
                     return new Logins.frmShowLoginInfo();
@@ -111,6 +124,10 @@ namespace PresentationLayer
                 else if (OutForm is frmShowCreateUpdateApplicationTypeInfo childSix)
                 {
                     childSix.LoadInfo(frmShowManageApplicationTypesList.SelectedRow);
+                }
+                else if (OutForm is frmShowCreateUpdateTestTypeInfo childSeven)
+                {
+                    childSeven.LoadInfo(frmShowManageTestTypeList.SelectdRow);
                 }
 
                     Text = OutForm.Text;
@@ -281,6 +298,11 @@ namespace PresentationLayer
         private void button1_Click(object sender, EventArgs e)
         {
             ShowForm(EnForm.ManageApplicationType);
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            ShowForm(EnForm.ManageTestTypes);
         }
     }
 }

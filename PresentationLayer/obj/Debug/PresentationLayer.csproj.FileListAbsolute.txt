@@ -120,3 +120,5 @@ C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\Presenta.9C561136.Up2
 C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.pdb
 C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.Applications.ApplicationTypes.frmShowCreateUpdateApplicationTypeInfo.resources
+C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.TestTypes.frmShowManageTestTypeList.resources
+C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.TestTypes.frmShowCreateUpdateTestTypeInfo.resources

@@ -132,6 +132,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestTypes\frmShowCreateUpdateTestTypeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestTypes\frmShowCreateUpdateTestTypeInfo.Designer.cs">
+      <DependentUpon>frmShowCreateUpdateTestTypeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestTypes\frmShowManageTestTypeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestTypes\frmShowManageTestTypeList.Designer.cs">
+      <DependentUpon>frmShowManageTestTypeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\Controls\ctrlShowUserInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +223,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TestTypes\frmShowCreateUpdateTestTypeInfo.resx">
+      <DependentUpon>frmShowCreateUpdateTestTypeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestTypes\frmShowManageTestTypeList.resx">
+      <DependentUpon>frmShowManageTestTypeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\Controls\ctrlShowUserInfo.resx">
       <DependentUpon>ctrlShowUserInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -409,6 +427,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\money 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title-grey-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamation-grey-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

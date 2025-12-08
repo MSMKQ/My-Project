@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\applications\\applicationtypes\\frmshowcreateupdateapplicationtypeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:applications\\applicationtypes\\frmshowcreateupdateapplicationtypeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\testtypes\\frmshowmanagetesttypelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:testtypes\\frmshowmanagetesttypelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\testtypes\\frmshowmanagetesttypelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:testtypes\\frmshowmanagetesttypelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,13 +23,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmShowCreateUpdateApplicationTypeInfo.cs [Design]",
-              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs",
-              "RelativeDocumentMoniker": "Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs",
-              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs [Design]",
-              "RelativeToolTip": "Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs [Design]",
+              "Title": "frmShowManageTestTypeList.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\TestTypes\\frmShowManageTestTypeList.cs",
+              "RelativeDocumentMoniker": "TestTypes\\frmShowManageTestTypeList.cs",
+              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\TestTypes\\frmShowManageTestTypeList.cs",
+              "RelativeToolTip": "TestTypes\\frmShowManageTestTypeList.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAhwCQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T06:44:33.685Z",
+              "WhenOpened": "2025-12-08T04:57:00.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmShowManageTestTypeList.cs [Design]",
+              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\TestTypes\\frmShowManageTestTypeList.cs",
+              "RelativeDocumentMoniker": "TestTypes\\frmShowManageTestTypeList.cs",
+              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\TestTypes\\frmShowManageTestTypeList.cs [Design]",
+              "RelativeToolTip": "TestTypes\\frmShowManageTestTypeList.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:56:57.999Z",
               "EditorCaption": " [Design]"
             }
           ]
