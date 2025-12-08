@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Mac\\Home\\Desktop\\C# Project\\Project 8\\PresentationLayer\\",
+  "WorkspaceRootPath": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\c# project\\project 8\\presentationlayer\\applications\\applicationtypes\\frmshowcreateupdateapplicationtypeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:applications\\applicationtypes\\frmshowcreateupdateapplicationtypeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\frmshownewmainmenue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:frmshownewmainmenue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\c# project\\project 8\\presentationlayer\\frmshownewmainmenue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:frmshownewmainmenue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\applications\\applicationtypes\\frmshowcreateupdateapplicationtypeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:applications\\applicationtypes\\frmshowcreateupdateapplicationtypeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\applications\\applicationtypes\\frmshowcreateupdateapplicationtypeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:applications\\applicationtypes\\frmshowcreateupdateapplicationtypeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "frmShowNewMainMenue.cs",
-              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\C# Project\\Project 8\\PresentationLayer\\frmShowNewMainMenue.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\frmShowNewMainMenue.cs",
               "RelativeDocumentMoniker": "frmShowNewMainMenue.cs",
-              "ToolTip": "C:\\Mac\\Home\\Desktop\\C# Project\\Project 8\\PresentationLayer\\frmShowNewMainMenue.cs",
+              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\frmShowNewMainMenue.cs",
               "RelativeToolTip": "frmShowNewMainMenue.cs",
-              "ViewState": "AgIAAFwAAAAALzMzMzMpwEAAAABmAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAHAAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T10:35:42.556Z",
+              "WhenOpened": "2025-12-08T00:57:46.441Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmShowCreateUpdateApplicationTypeInfo.cs [Design]",
-              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\C# Project\\Project 8\\PresentationLayer\\Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs",
+              "DocumentIndex": 1,
+              "Title": "frmShowCreateUpdateApplicationTypeInfo.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs",
               "RelativeDocumentMoniker": "Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs",
-              "ToolTip": "C:\\Mac\\Home\\Desktop\\C# Project\\Project 8\\PresentationLayer\\Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs [Design]",
+              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs",
+              "RelativeToolTip": "Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowGMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T21:17:18.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmShowCreateUpdateApplicationTypeInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs",
+              "RelativeDocumentMoniker": "Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs",
+              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs [Design]",
               "RelativeToolTip": "Applications\\ApplicationTypes\\frmShowCreateUpdateApplicationTypeInfo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T10:11:19.018Z",
+              "WhenOpened": "2025-12-06T06:44:33.685Z",
               "EditorCaption": " [Design]"
             }
           ]

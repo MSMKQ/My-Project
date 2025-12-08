@@ -33,6 +33,49 @@ namespace BusinessLayer
             return ClsFunctions.GetDataTable<ClsApplicationType>();
         }
 
+        public static ClsApplicationType GetInfoByID(int? AppliationTypeID)
+        {
+            ClsApplicationType _ApplicationType = ClsFunctions.GetInfoByID<ClsApplicationType>(AppliationTypeID);
 
+            if (_ApplicationType != null)
+            {
+                _Mood = EnMood.Update;
+            }
+
+            return _ApplicationType;
+        }
+
+        private bool Create()
+        {
+            ApplicationTypeID = ClsFunctions.Create(this);
+
+            return (ApplicationTypeID.HasValue);
+        }
+
+        private bool Update()
+        {
+            return ClsFunctions.Update(this);
+        }
+
+        public bool Save()
+        {
+            switch (_Mood)
+            {
+                case EnMood.Create:
+                    if (Create())
+                    {
+                        _Mood = EnMood.Update;
+                        return true;
+                    }
+                    else
+                        return false;
+
+                case EnMood.Update:
+                    return Update();
+
+                default:
+                    return false;
+            }
+        }
     }
 }

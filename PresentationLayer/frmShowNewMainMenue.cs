@@ -22,7 +22,7 @@ namespace PresentationLayer
         private bool _sidebarExpanded = false;
         private bool _homeCollapsible = true;
         private Dictionary<string, Form> _ChildForm = new Dictionary<string, Form>();
-        public enum  EnForm { ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo }
+        public enum  EnForm { ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo , UpdateApplicationTypeInfo }
 
         private Form _PushForm(EnForm enform)
         {
@@ -64,6 +64,9 @@ namespace PresentationLayer
                 case EnForm.CreateApplicationTypeInfo:
                     return new Applications.ApplicationTypes.frmShowCreateUpdateApplicationTypeInfo();
 
+                case EnForm.UpdateApplicationTypeInfo:
+                    return new Applications.ApplicationTypes.frmShowCreateUpdateApplicationTypeInfo(frmShowManageApplicationTypesList.SelectedRow);
+                    
                 case EnForm.Login:
                     return new Logins.frmShowLoginInfo();
 
@@ -105,8 +108,12 @@ namespace PresentationLayer
                 {
                     childFive.LoadInfo(frmShowManageUsersList.SelectedRow);
                 }
+                else if (OutForm is frmShowCreateUpdateApplicationTypeInfo childSix)
+                {
+                    childSix.LoadInfo(frmShowManageApplicationTypesList.SelectedRow);
+                }
 
-                Text = OutForm.Text;
+                    Text = OutForm.Text;
                 lblMood.Text = OutForm.Text;
 
                 OutForm.BringToFront();

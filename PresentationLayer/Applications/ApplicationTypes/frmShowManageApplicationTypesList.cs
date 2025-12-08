@@ -15,6 +15,8 @@ namespace PresentationLayer.Applications.ApplicationTypes
     {
         private DataTable _ApplicationTypes;
 
+        public static int SelectedRow { get; set; }
+
         public frmShowManageApplicationTypesList()
         {
             InitializeComponent();
@@ -33,8 +35,9 @@ namespace PresentationLayer.Applications.ApplicationTypes
 
         private void _Records()
         {
-            int SelectedRow = _SelectedRow().Value;
-            lblRecords.Text = $"# Records [{dgvApplicationTypes.RowCount}] AppType [{SelectedRow}]";
+            int _SelectedRow = this._SelectedRow().Value;
+            lblRecords.Text = $"# Records [{dgvApplicationTypes.RowCount}] AppType [{_SelectedRow}]";
+            SelectedRow = _SelectedRow;
         }
 
         private void _Table()
@@ -81,6 +84,22 @@ namespace PresentationLayer.Applications.ApplicationTypes
             if (MdiParent is frmShowNewMainMenue parent)
             {
                 parent.ShowForm(frmShowNewMainMenue.EnForm.CreateApplicationTypeInfo);
+            }
+        }
+
+        private void showCreateNewApplicationTypeInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MdiParent is frmShowNewMainMenue parent)
+            {
+                parent.ShowForm(frmShowNewMainMenue.EnForm.CreateApplicationTypeInfo);
+            }
+        }
+
+        private void showUpdateApplicationInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MdiParent is frmShowNewMainMenue parent)
+            {
+                parent.ShowForm(frmShowNewMainMenue.EnForm.UpdateApplicationTypeInfo);
             }
         }
     }
