@@ -61,6 +61,12 @@
     <Compile Include="Applications\ApplicationTypes\frmShowManageApplicationTypesList.Designer.cs">
       <DependentUpon>frmShowManageApplicationTypesList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\LocalDrivingLicenseApplications\frmShowManageLocalDrivingLicenseApplicationsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\LocalDrivingLicenseApplications\frmShowManageLocalDrivingLicenseApplicationsList.Designer.cs">
+      <DependentUpon>frmShowManageLocalDrivingLicenseApplicationsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ClsRegistry.cs" />
     <Compile Include="Classes\ClsUtils.cs" />
     <Compile Include="Classes\ClsValidations.cs" />
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\ApplicationTypes\frmShowManageApplicationTypesList.resx">
       <DependentUpon>frmShowManageApplicationTypesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\LocalDrivingLicenseApplications\frmShowManageLocalDrivingLicenseApplicationsList.resx">
+      <DependentUpon>frmShowManageLocalDrivingLicenseApplicationsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowMainMenue.resx">
       <DependentUpon>frmShowMainMenue.cs</DependentUpon>
@@ -433,6 +442,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exclamation-grey-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Driving License 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LocalDriving License.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

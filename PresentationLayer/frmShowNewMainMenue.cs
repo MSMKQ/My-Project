@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using PresentationLayer.Applications.ApplicationTypes;
+using PresentationLayer.Applications.LocalDrivingLicenseApplications;
 using PresentationLayer.Classes;
 using PresentationLayer.People;
 using PresentationLayer.Properties;
@@ -21,11 +22,13 @@ namespace PresentationLayer
     public partial class frmShowNewMainMenue : Form
     {
         private bool _sidebarExpanded = false;
-        private bool _homeCollapsible = true;
+        private bool _ApplicationsCollapsible = true;
+        private bool _ServicesCollapsible = true;
         private Dictionary<string, Form> _ChildForm = new Dictionary<string, Form>();
+
         public enum  EnForm 
         {
-            ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo , UpdateApplicationTypeInfo , ManageTestTypes , CreateTestTypeInfo , UpdateTestTypeInfo 
+            ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo , UpdateApplicationTypeInfo , ManageTestTypes , CreateTestTypeInfo , UpdateTestTypeInfo , ManageLocalDrivingLicenseApplications
         }
 
         private Form _PushForm(EnForm enform)
@@ -79,7 +82,12 @@ namespace PresentationLayer
 
                 case EnForm.UpdateTestTypeInfo:
                     return new TestTypes.frmShowCreateUpdateTestTypeInfo(frmShowManageTestTypeList.SelectdRow);
-                    
+
+                case EnForm.ManageLocalDrivingLicenseApplications:
+                    return new frmShowManageLocalDrivingLicenseApplicationsList();
+
+
+
                 case EnForm.Login:
                     return new Logins.frmShowLoginInfo();
 
@@ -208,13 +216,13 @@ namespace PresentationLayer
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (_homeCollapsible)
+            if (_ApplicationsCollapsible)
             {
                 pHome.Height += 10;
 
                 if (pHome.Height == pHome.MaximumSize.Height)
                 {
-                    _homeCollapsible = false;
+                    _ApplicationsCollapsible = false;
                     timer2.Stop();
                 }            
             }
@@ -224,8 +232,31 @@ namespace PresentationLayer
 
                 if (pHome.Height == pHome.MinimumSize.Height)
                 {
-                    _homeCollapsible = true;
+                    _ApplicationsCollapsible = true;
                     timer2.Stop();
+                }
+            }
+        }
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if ( _ServicesCollapsible )
+            {
+                pServices.Height += 10;
+
+                if (pServices.Height == pServices.MaximumSize.Height)
+                {
+                    _ServicesCollapsible = false;
+                    timer3.Stop();
+                }
+            }
+            else
+            {
+                pServices.Height -= 10;
+
+                if (pServices.Height == pServices.MinimumSize.Height)
+                {
+                    _ServicesCollapsible = true;
+                    timer3.Stop();
                 }
             }
         }
@@ -255,6 +286,7 @@ namespace PresentationLayer
             btnSignOut.ForeColor = (IsEnabled) ? Color.Red : SystemColors.Control;
             pbUserName.Image = (IsEnabled && File.Exists(ClsGlobal.CurrentUser.PersonInfo.ImagePath)) ? ClsUtils.ResizeAndCorpToCircle(Image.FromFile(ClsGlobal.CurrentUser.PersonInfo.ImagePath), 32, 32, Color.White) : Resources.login_64;
             btnApplications.Enabled = IsEnabled;
+            btnServices.Enabled = IsEnabled;
         }
 
         public void ReLoadForm()
@@ -303,6 +335,21 @@ namespace PresentationLayer
         private void button4_Click_1(object sender, EventArgs e)
         {
             ShowForm(EnForm.ManageTestTypes);
+        }
+
+        private void btnServices_Click(object sender, EventArgs e)
+        {
+            timer3.Start();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnLocalDrivingLicenseApplications_Click(object sender, EventArgs e)
+        {
+            ShowForm(EnForm.ManageLocalDrivingLicenseApplications);
         }
     }
 }

@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="ClsDataAccessSettings.cs" />
     <Compile Include="ClsFunctions.cs" />
+    <Compile Include="ClsLocalDrivingLicenseApplicationDataAccess.cs" />
     <Compile Include="ClsPersonDataAccess.cs" />
     <Compile Include="ClsReadingHelper.cs" />
     <Compile Include="ClsAttributes.cs" />

@@ -1,0 +1,97 @@
+﻿using BusinessLayer;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
+{
+    public partial class frmShowManageLocalDrivingLicenseApplicationsList : Form
+    {
+        private DataTable _Locals;
+
+        public frmShowManageLocalDrivingLicenseApplicationsList()
+        {
+            InitializeComponent();
+        }
+
+        private int? _SelectedRow()
+        {
+            if (dgvApplications.CurrentRow?.Cells[0].Value == null || dgvApplications.CurrentRow?.Cells[0].Value == DBNull.Value)
+                return 0;
+
+            if (int.TryParse(dgvApplications.CurrentRow.Cells[0].Value.ToString(), out int value))
+                return value;
+
+            return 0;
+        }
+
+        private void _Records()
+        {
+            lblRecords.Text = $"# Records [{dgvApplications.RowCount}] L.D.L.App No [{_SelectedRow()}]";
+        }
+
+        private void _table()
+        {
+            if (dgvApplications.RowCount > 0)
+            {
+                var headers = new (string colName, string colText, DataGridViewAutoSizeColumnMode Mode)[]
+                {
+                    ("LocalDrivingLicenseApplicationID", "L.D.L.App No", DataGridViewAutoSizeColumnMode.AllCells),
+                    ("Title", "License Class", DataGridViewAutoSizeColumnMode.NotSet),
+                    ("FullName", "Full Name", DataGridViewAutoSizeColumnMode.NotSet),
+                    ("NationID", "Nation ID", DataGridViewAutoSizeColumnMode.AllCells),
+                    ("ApplicationDate", "Date", DataGridViewAutoSizeColumnMode.AllCells),
+                    ("ApplicationStatus", "Status", DataGridViewAutoSizeColumnMode.AllCells),
+                    ("LastStatusDate", "Last Status", DataGridViewAutoSizeColumnMode.AllCells),
+                    ("Username", "Created By", DataGridViewAutoSizeColumnMode.AllCells)
+                };
+
+                foreach ( var header in headers )
+                {
+                    var col = dgvApplications.Columns[header.colName];
+
+                    if ( col != null )
+                    {
+                        col.HeaderText = header.colText;
+                        col.AutoSizeMode = header.Mode;
+                    }
+                }
+
+                cbFilter.SelectedIndex = 0;
+            }
+
+            _Records();
+        }
+
+        private void frmShowManageLocalDrivingLicenseApplicationsList_Load(object sender, EventArgs e)
+        {
+            dgvApplications.ClearSelection();
+            _Locals = ClsLocalDrivingLicenseApplication.GetApplications();
+            dgvApplications.DataSource = _Locals;
+            _table();
+        }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFilterValue.Visible = (cbFilter.Text != "None");
+
+            if (cbFilter.Text == "None")
+            {
+                _Locals.DefaultView.RowFilter = null;
+            }
+            else if (txtFilterValue.Visible)
+            {
+                txtFilterValue.Clear();
+                txtFilterValue.Focus();
+            }
+
+            _Records();
+        }
+    }
+}

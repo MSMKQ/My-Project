@@ -42,6 +42,13 @@
             this.btnPeople = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnUsers = new System.Windows.Forms.Button();
+            this.pServices = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.btnServices = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.pHome = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -60,7 +67,10 @@
             this.lblExpandedClose = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnLocalDrivingLicenseApplications = new System.Windows.Forms.Button();
             this.flpSideBar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserName)).BeginInit();
@@ -68,6 +78,10 @@
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.pServices.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.pHome.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -76,6 +90,7 @@
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // flpSideBar
@@ -83,9 +98,10 @@
             this.flpSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.flpSideBar.Controls.Add(this.panel1);
             this.flpSideBar.Controls.Add(this.panel9);
+            this.flpSideBar.Controls.Add(this.pHome);
             this.flpSideBar.Controls.Add(this.panel3);
             this.flpSideBar.Controls.Add(this.panel5);
-            this.flpSideBar.Controls.Add(this.pHome);
+            this.flpSideBar.Controls.Add(this.pServices);
             this.flpSideBar.Controls.Add(this.panel4);
             this.flpSideBar.Controls.Add(this.panel11);
             this.flpSideBar.Controls.Add(this.panel10);
@@ -106,15 +122,16 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 138);
+            this.panel1.Size = new System.Drawing.Size(265, 138);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
             this.panel6.Location = new System.Drawing.Point(3, 133);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(241, 1);
+            this.panel6.Size = new System.Drawing.Size(255, 1);
             this.panel6.TabIndex = 8;
             // 
             // label2
@@ -188,7 +205,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.btnPeople);
-            this.panel3.Location = new System.Drawing.Point(3, 204);
+            this.panel3.Location = new System.Drawing.Point(3, 268);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(247, 51);
             this.panel3.TabIndex = 3;
@@ -213,7 +230,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.btnUsers);
-            this.panel5.Location = new System.Drawing.Point(3, 261);
+            this.panel5.Location = new System.Drawing.Point(3, 325);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(247, 51);
             this.panel5.TabIndex = 5;
@@ -235,14 +252,104 @@
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.button4_Click);
             // 
+            // pServices
+            // 
+            this.pServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.pServices.Controls.Add(this.panel14);
+            this.pServices.Controls.Add(this.panel15);
+            this.pServices.Controls.Add(this.panel16);
+            this.pServices.Location = new System.Drawing.Point(3, 382);
+            this.pServices.MaximumSize = new System.Drawing.Size(272, 170);
+            this.pServices.MinimumSize = new System.Drawing.Size(272, 58);
+            this.pServices.Name = "pServices";
+            this.pServices.Size = new System.Drawing.Size(272, 58);
+            this.pServices.TabIndex = 12;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.button5);
+            this.panel14.Location = new System.Drawing.Point(1, 114);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(275, 51);
+            this.panel14.TabIndex = 5;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.Control;
+            this.button5.Image = global::PresentationLayer.Properties.Resources.TestType_32;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(-7, -11);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(279, 74);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "                    Test Type List";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.btnServices);
+            this.panel15.Location = new System.Drawing.Point(3, 3);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(266, 51);
+            this.panel15.TabIndex = 2;
+            // 
+            // btnServices
+            // 
+            this.btnServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServices.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnServices.Image = global::PresentationLayer.Properties.Resources.LocalDriving_License;
+            this.btnServices.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnServices.Location = new System.Drawing.Point(-17, -12);
+            this.btnServices.Name = "btnServices";
+            this.btnServices.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnServices.Size = new System.Drawing.Size(288, 74);
+            this.btnServices.TabIndex = 3;
+            this.btnServices.Text = "                    Services";
+            this.btnServices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnServices.UseVisualStyleBackColor = false;
+            this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.button7);
+            this.panel16.Location = new System.Drawing.Point(-1, 57);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(275, 51);
+            this.panel16.TabIndex = 4;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.SystemColors.Control;
+            this.button7.Image = global::PresentationLayer.Properties.Resources.New_Driving_License_32;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(-5, -11);
+            this.button7.Name = "button7";
+            this.button7.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.button7.Size = new System.Drawing.Size(279, 74);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "                    New Driving License";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
             // pHome
             // 
             this.pHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
             this.pHome.Controls.Add(this.panel12);
             this.pHome.Controls.Add(this.panel2);
+            this.pHome.Controls.Add(this.panel13);
             this.pHome.Controls.Add(this.panel7);
-            this.pHome.Location = new System.Drawing.Point(3, 318);
-            this.pHome.MaximumSize = new System.Drawing.Size(272, 190);
+            this.pHome.Location = new System.Drawing.Point(3, 204);
+            this.pHome.MaximumSize = new System.Drawing.Size(272, 210);
             this.pHome.MinimumSize = new System.Drawing.Size(272, 58);
             this.pHome.Name = "pHome";
             this.pHome.Size = new System.Drawing.Size(272, 58);
@@ -251,7 +358,7 @@
             // panel12
             // 
             this.panel12.Controls.Add(this.button4);
-            this.panel12.Location = new System.Drawing.Point(1, 114);
+            this.panel12.Location = new System.Drawing.Point(0, 154);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(275, 51);
             this.panel12.TabIndex = 5;
@@ -264,7 +371,7 @@
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
             this.button4.Image = global::PresentationLayer.Properties.Resources.TestType_32;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-12, -11);
+            this.button4.Location = new System.Drawing.Point(-2, -11);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(279, 74);
@@ -303,7 +410,7 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.button1);
-            this.panel7.Location = new System.Drawing.Point(-1, 57);
+            this.panel7.Location = new System.Drawing.Point(0, 102);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(275, 51);
             this.panel7.TabIndex = 4;
@@ -316,7 +423,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Image = global::PresentationLayer.Properties.Resources.ApplicationType;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-8, -11);
+            this.button1.Location = new System.Drawing.Point(-2, -11);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(279, 74);
@@ -329,7 +436,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(3, 382);
+            this.panel4.Location = new System.Drawing.Point(3, 446);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(247, 51);
             this.panel4.TabIndex = 4;
@@ -354,7 +461,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.SystemColors.Control;
-            this.panel11.Location = new System.Drawing.Point(3, 439);
+            this.panel11.Location = new System.Drawing.Point(3, 503);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(270, 1);
             this.panel11.TabIndex = 13;
@@ -362,7 +469,7 @@
             // panel10
             // 
             this.panel10.Controls.Add(this.btnSignOut);
-            this.panel10.Location = new System.Drawing.Point(3, 446);
+            this.panel10.Location = new System.Drawing.Point(3, 510);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(247, 51);
             this.panel10.TabIndex = 12;
@@ -443,6 +550,11 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "DVLD System V 0.1 Beta";
             // 
+            // timer3
+            // 
+            this.timer3.Interval = 10;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -455,6 +567,32 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.btnLocalDrivingLicenseApplications);
+            this.panel13.Location = new System.Drawing.Point(0, 50);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(275, 51);
+            this.panel13.TabIndex = 14;
+            // 
+            // btnLocalDrivingLicenseApplications
+            // 
+            this.btnLocalDrivingLicenseApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.btnLocalDrivingLicenseApplications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocalDrivingLicenseApplications.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLocalDrivingLicenseApplications.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLocalDrivingLicenseApplications.Image = global::PresentationLayer.Properties.Resources.TestType_32;
+            this.btnLocalDrivingLicenseApplications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLocalDrivingLicenseApplications.Location = new System.Drawing.Point(-2, -11);
+            this.btnLocalDrivingLicenseApplications.Name = "btnLocalDrivingLicenseApplications";
+            this.btnLocalDrivingLicenseApplications.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnLocalDrivingLicenseApplications.Size = new System.Drawing.Size(279, 74);
+            this.btnLocalDrivingLicenseApplications.TabIndex = 3;
+            this.btnLocalDrivingLicenseApplications.Text = "                    Manage L.D.L.App";
+            this.btnLocalDrivingLicenseApplications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLocalDrivingLicenseApplications.UseVisualStyleBackColor = false;
+            this.btnLocalDrivingLicenseApplications.Click += new System.EventHandler(this.btnLocalDrivingLicenseApplications_Click);
             // 
             // frmShowNewMainMenue
             // 
@@ -480,6 +618,10 @@
             this.panel9.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.pServices.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
             this.pHome.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -489,6 +631,7 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel13.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,5 +670,15 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel pServices;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button btnServices;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button btnLocalDrivingLicenseApplications;
     }
 }
