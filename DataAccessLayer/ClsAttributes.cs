@@ -26,4 +26,11 @@ namespace DataAccessLayer
         public string Name { get; }
         public ClsKeyAttribute(string name) => Name = name;
     }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class ClsStringAttribute : Attribute
+    {
+        public string Name { get; set; }
+        public ClsStringAttribute(string name) => Name = name;
+    }
 }

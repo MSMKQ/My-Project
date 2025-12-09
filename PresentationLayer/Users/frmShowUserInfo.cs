@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PresentationLayer.InterFaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Users
 {
-    public partial class frmShowUserInfo : Form
+    public partial class frmShowUserInfo : Form, ILoadableForm
     {
         public frmShowUserInfo(int? UserID)
         {
@@ -32,6 +33,11 @@ namespace PresentationLayer.Users
             {
                 parent.ShowForm(frmShowNewMainMenue.EnForm.ManageUsers);
             }
+        }
+
+        private void frmShowUserInfo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

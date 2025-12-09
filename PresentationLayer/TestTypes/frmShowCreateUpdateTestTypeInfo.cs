@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using PresentationLayer.InterFaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.TestTypes
 {
-    public partial class frmShowCreateUpdateTestTypeInfo : Form
+    public partial class frmShowCreateUpdateTestTypeInfo : Form, ILoadableForm
     {
         private enum EnMood { Create , Update }
         private EnMood _Mood;

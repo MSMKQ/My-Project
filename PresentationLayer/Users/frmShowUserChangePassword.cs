@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using PresentationLayer.Classes;
+using PresentationLayer.InterFaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Users
 {
-    public partial class frmShowUserChangePassword : Form
+    public partial class frmShowUserChangePassword : Form, ILoadableForm
     {
         private int? _UserID;
 
@@ -132,6 +133,11 @@ namespace PresentationLayer.Users
             {
                 MessageBox.Show("Error: Data was not saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void frmShowUserChangePassword_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

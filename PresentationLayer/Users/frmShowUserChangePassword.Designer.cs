@@ -31,32 +31,32 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.ctrlShowUserInfo1 = new PresentationLayer.Users.Controls.ctrlShowUserInfo();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tlpCurrentPassword = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCurrentPassword = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tlpNewPassword = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNewPassword = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lblBack = new System.Windows.Forms.Label();
             this.tlpConfirmPassword = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lblBack = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.tlpNewPassword = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNewPassword = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tlpCurrentPassword = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCurrentPassword = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ctrlShowUserInfo1 = new PresentationLayer.Users.Controls.ctrlShowUserInfo();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tlpCurrentPassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tlpNewPassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tlpConfirmPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tlpNewPassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tlpCurrentPassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +92,14 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(634, 534);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // ctrlShowUserInfo1
+            // 
+            this.ctrlShowUserInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrlShowUserInfo1.Location = new System.Drawing.Point(3, 3);
+            this.ctrlShowUserInfo1.Name = "ctrlShowUserInfo1";
+            this.ctrlShowUserInfo1.Size = new System.Drawing.Size(668, 376);
+            this.ctrlShowUserInfo1.TabIndex = 0;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnSave);
@@ -105,53 +113,78 @@
             this.panel1.Size = new System.Drawing.Size(668, 146);
             this.panel1.TabIndex = 1;
             // 
-            // tlpCurrentPassword
+            // btnSave
             // 
-            this.tlpCurrentPassword.ColumnCount = 3;
-            this.tlpCurrentPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tlpCurrentPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpCurrentPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCurrentPassword.Controls.Add(this.label1, 0, 0);
-            this.tlpCurrentPassword.Controls.Add(this.txtCurrentPassword, 2, 0);
-            this.tlpCurrentPassword.Controls.Add(this.pictureBox1, 1, 0);
-            this.tlpCurrentPassword.Location = new System.Drawing.Point(5, 6);
-            this.tlpCurrentPassword.Name = "tlpCurrentPassword";
-            this.tlpCurrentPassword.RowCount = 1;
-            this.tlpCurrentPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCurrentPassword.Size = new System.Drawing.Size(403, 38);
-            this.tlpCurrentPassword.TabIndex = 0;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = global::PresentationLayer.Properties.Resources.Save_32;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(509, 102);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(122, 41);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label1
+            // lblBack
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Current Password";
+            this.lblBack.AutoSize = true;
+            this.lblBack.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblBack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.Location = new System.Drawing.Point(0, 131);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(53, 15);
+            this.lblBack.TabIndex = 3;
+            this.lblBack.Text = "<< Back";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
             // 
-            // txtCurrentPassword
+            // tlpConfirmPassword
             // 
-            this.txtCurrentPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCurrentPassword.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurrentPassword.Location = new System.Drawing.Point(163, 8);
-            this.txtCurrentPassword.Name = "txtCurrentPassword";
-            this.txtCurrentPassword.Size = new System.Drawing.Size(237, 22);
-            this.txtCurrentPassword.TabIndex = 1;
-            this.txtCurrentPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPassword_Validating);
+            this.tlpConfirmPassword.ColumnCount = 3;
+            this.tlpConfirmPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tlpConfirmPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpConfirmPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConfirmPassword.Controls.Add(this.label3, 0, 0);
+            this.tlpConfirmPassword.Controls.Add(this.txtConfirmPassword, 2, 0);
+            this.tlpConfirmPassword.Controls.Add(this.pictureBox3, 1, 0);
+            this.tlpConfirmPassword.Location = new System.Drawing.Point(5, 91);
+            this.tlpConfirmPassword.Name = "tlpConfirmPassword";
+            this.tlpConfirmPassword.RowCount = 1;
+            this.tlpConfirmPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConfirmPassword.Size = new System.Drawing.Size(403, 38);
+            this.tlpConfirmPassword.TabIndex = 2;
             // 
-            // pictureBox1
+            // label3
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::PresentationLayer.Properties.Resources.Password_32;
-            this.pictureBox1.Location = new System.Drawing.Point(123, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Confirm Password";
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPassword.Location = new System.Drawing.Point(163, 8);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Size = new System.Drawing.Size(237, 22);
+            this.txtConfirmPassword.TabIndex = 1;
+            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = global::PresentationLayer.Properties.Resources.Password_32;
+            this.pictureBox3.Location = new System.Drawing.Point(123, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(34, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
             // tlpNewPassword
             // 
@@ -202,90 +235,57 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // tlpConfirmPassword
+            // tlpCurrentPassword
             // 
-            this.tlpConfirmPassword.ColumnCount = 3;
-            this.tlpConfirmPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tlpConfirmPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpConfirmPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpConfirmPassword.Controls.Add(this.label3, 0, 0);
-            this.tlpConfirmPassword.Controls.Add(this.txtConfirmPassword, 2, 0);
-            this.tlpConfirmPassword.Controls.Add(this.pictureBox3, 1, 0);
-            this.tlpConfirmPassword.Location = new System.Drawing.Point(5, 91);
-            this.tlpConfirmPassword.Name = "tlpConfirmPassword";
-            this.tlpConfirmPassword.RowCount = 1;
-            this.tlpConfirmPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpConfirmPassword.Size = new System.Drawing.Size(403, 38);
-            this.tlpConfirmPassword.TabIndex = 2;
+            this.tlpCurrentPassword.ColumnCount = 3;
+            this.tlpCurrentPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tlpCurrentPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpCurrentPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCurrentPassword.Controls.Add(this.label1, 0, 0);
+            this.tlpCurrentPassword.Controls.Add(this.txtCurrentPassword, 2, 0);
+            this.tlpCurrentPassword.Controls.Add(this.pictureBox1, 1, 0);
+            this.tlpCurrentPassword.Location = new System.Drawing.Point(5, 6);
+            this.tlpCurrentPassword.Name = "tlpCurrentPassword";
+            this.tlpCurrentPassword.RowCount = 1;
+            this.tlpCurrentPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCurrentPassword.Size = new System.Drawing.Size(403, 38);
+            this.tlpCurrentPassword.TabIndex = 0;
             // 
-            // label3
+            // label1
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Confirm Password";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Current Password";
             // 
-            // txtConfirmPassword
+            // txtCurrentPassword
             // 
-            this.txtConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(163, 8);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(237, 22);
-            this.txtConfirmPassword.TabIndex = 1;
-            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
+            this.txtCurrentPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCurrentPassword.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCurrentPassword.Location = new System.Drawing.Point(163, 8);
+            this.txtCurrentPassword.Name = "txtCurrentPassword";
+            this.txtCurrentPassword.Size = new System.Drawing.Size(237, 22);
+            this.txtCurrentPassword.TabIndex = 1;
+            this.txtCurrentPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPassword_Validating);
             // 
-            // pictureBox3
+            // pictureBox1
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::PresentationLayer.Properties.Resources.Password_32;
-            this.pictureBox3.Location = new System.Drawing.Point(123, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // lblBack
-            // 
-            this.lblBack.AutoSize = true;
-            this.lblBack.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblBack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBack.Location = new System.Drawing.Point(0, 131);
-            this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(53, 15);
-            this.lblBack.TabIndex = 3;
-            this.lblBack.Text = "<< Back";
-            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = global::PresentationLayer.Properties.Resources.Save_32;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(509, 102);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(122, 41);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::PresentationLayer.Properties.Resources.Password_32;
+            this.pictureBox1.Location = new System.Drawing.Point(123, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // ctrlShowUserInfo1
-            // 
-            this.ctrlShowUserInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctrlShowUserInfo1.Location = new System.Drawing.Point(3, 3);
-            this.ctrlShowUserInfo1.Name = "ctrlShowUserInfo1";
-            this.ctrlShowUserInfo1.Size = new System.Drawing.Size(668, 376);
-            this.ctrlShowUserInfo1.TabIndex = 0;
             // 
             // frmShowUserChangePassword
             // 
@@ -295,19 +295,20 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmShowUserChangePassword";
             this.Text = "frmShowUserChangePassword";
+            this.Load += new System.EventHandler(this.frmShowUserChangePassword_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tlpCurrentPassword.ResumeLayout(false);
-            this.tlpCurrentPassword.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tlpNewPassword.ResumeLayout(false);
-            this.tlpNewPassword.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tlpConfirmPassword.ResumeLayout(false);
             this.tlpConfirmPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tlpNewPassword.ResumeLayout(false);
+            this.tlpNewPassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tlpCurrentPassword.ResumeLayout(false);
+            this.tlpCurrentPassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 

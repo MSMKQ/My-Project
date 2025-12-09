@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Asn1;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
@@ -158,6 +159,91 @@ namespace DataAccessLayer
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error push message to events: {ex.Message}.");
+                }
+            }
+
+            return IsFound ? obj : default;
+        }
+
+        public static T GetInfoByString<T>(string StringText)where T : new()
+        {
+            if (string.IsNullOrWhiteSpace(StringText)) return default;
+
+            var AttributeTable = (ClsTableAttribute)Attribute.GetCustomAttribute(typeof(T), typeof(ClsTableAttribute));
+            var StringKey = typeof(T).GetProperties().FirstOrDefault(p => Attribute.IsDefined(p, typeof(ClsStringAttribute)));
+
+            if (AttributeTable == null || StringKey == null)
+                throw new InvalidOperationException("Table or Key is missing.");
+
+            string table = AttributeTable.Name;
+            string IdColumn = StringKey.Name;
+
+            T obj = new T();
+            bool IsFound = false;
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ClsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = $"SELECT * FROM {table} WHERE {IdColumn} = @{IdColumn}";
+
+                    using (MySqlCommand command = new MySqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue($"@{IdColumn}", StringText);
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if ( reader.Read() )
+                            {
+                                foreach (var prop in typeof(T).GetProperties())
+                                {
+                                    if (!reader.IsExistsColumn(prop.Name) || !prop.CanWrite)
+                                        continue;
+
+                                    object dpValue = reader[prop.Name];
+
+                                    if (dpValue == null || dpValue == DBNull.Value)
+                                    {
+                                        prop.SetValue(obj, null);
+                                    }
+                                    else if (prop.PropertyType.IsEnum)
+                                    {
+                                        prop.SetValue(obj, Enum.ToObject(prop.PropertyType, Convert.ToInt16(dpValue)));
+                                    }
+                                    else if (Nullable.GetUnderlyingType(prop.PropertyType) is Type UnderlyingType)
+                                    {
+                                        prop.SetValue(obj, Convert.ChangeType(dpValue, UnderlyingType));
+                                    }
+                                    else
+                                    {
+                                        prop.SetValue(obj, Convert.ChangeType(dpValue, prop.PropertyType));
+                                    }
+                                }
+
+                                IsFound = true;
+                            }
+                        }
+                    }
+                }
+            }
+            catch ( MySqlException e )
+            {
+                string source = $"{table}.GetInfoByString";
+
+                try
+                {
+                    if (!EventLog.SourceExists(source))
+                    {
+                        EventLog.CreateEventSource(source, _LogName);
+                    }
+
+                    EventLog.WriteEntry(source, e.Message, EventLogEntryType.Error);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error writting to events: {ex.Message}.");
                 }
             }
 

@@ -15,6 +15,8 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
     {
         private DataTable _Locals;
 
+        public static int SelectedRow;
+
         public frmShowManageLocalDrivingLicenseApplicationsList()
         {
             InitializeComponent();
@@ -33,7 +35,8 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
 
         private void _Records()
         {
-            lblRecords.Text = $"# Records [{dgvApplications.RowCount}] L.D.L.App No [{_SelectedRow()}]";
+            lblRecords.Text = $"# Records [{dgvApplications.RowCount}] L.D.L.App No [{_SelectedRow().Value}]";
+            SelectedRow = _SelectedRow().Value;
         }
 
         private void _table()
@@ -92,6 +95,27 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             }
 
             _Records();
+        }
+
+        private void dgvApplications_SelectionChanged(object sender, EventArgs e)
+        {
+            _Records();
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            if ( MdiParent is frmShowNewMainMenue parent)
+            {
+                parent.ShowForm(frmShowNewMainMenue.EnForm.CreateLocalDrivingLicenseApplicationInfo);
+            }
+        }
+
+        private void showUpdateApplicationInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ( MdiParent is frmShowNewMainMenue parent)
+            {
+                parent.ShowForm(frmShowNewMainMenue.EnForm.UpdateLocalDrivingLicenseApplicationInfo);
+            }
         }
     }
 }

@@ -14,6 +14,11 @@ namespace BusinessLayer
         private enum EnMood { Create , Update }
         private static EnMood _Mood;
 
+        public enum EnServices 
+        { 
+            NewLocalDriving = 1, RenewDrivingLicense = 2, ReplacementForLost = 3, ReplacementForDamage = 4, ReleaseForDetained = 5, NewInternationalLicense = 6, RetakeTest = 7
+        }
+
         [ClsKey("ApplicationTypeID")]
         public int? ApplicationTypeID { get; set; }
         public string Title { get; set; }
@@ -37,7 +42,19 @@ namespace BusinessLayer
         {
             ClsApplicationType _ApplicationType = ClsFunctions.GetInfoByID<ClsApplicationType>(AppliationTypeID);
 
-            if (_ApplicationType != null)
+            if ( _ApplicationType != null )
+            {
+                _Mood = EnMood.Update;
+            }
+
+            return _ApplicationType;
+        }
+
+        public static ClsApplicationType GetInfoByID(EnServices enServices)
+        {
+            ClsApplicationType _ApplicationType = ClsFunctions.GetInfoByID<ClsApplicationType>((int)enServices);
+
+            if ( _ApplicationType != null )
             {
                 _Mood = EnMood.Update;
             }

@@ -16,6 +16,8 @@ namespace PresentationLayer.People.Controls
 
         public void FilterFocus() { txtFilterValue.Focus(); }
 
+        public bool FilterEnabled { get { return groupBox1.Enabled; } set { groupBox1.Enabled = value; } }
+
         public ctrlShowFindPersonInfo()
         {
             InitializeComponent();

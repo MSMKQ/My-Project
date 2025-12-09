@@ -14,6 +14,51 @@ namespace DataAccessLayer
 
         private static string _LogName = "Applications";
 
+
+        public static int? IsThereAnActiveApplication(int? ApplicationPersonID, int? LicenseClassID)
+        {
+            int? ActiveApplicationID = null;
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ClsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = $"SELECT L.ApplicationID As ActiveApplicationID FROM localdrivinglicenseapplications L INNER JOIN applications A ON L.ApplicationID = A.ApplicationID WHERE L.LicenseClassID = @LicenseClassID AND A.ApplicationPersonID = @ApplicationPersonID AND A.ApplicationStatus = 1";
+
+                    using (MySqlCommand command = new MySqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+                        command.Parameters.AddWithValue("@ApplicationPersonID", ApplicationPersonID);
+
+                        object result = command.ExecuteScalar();
+                        ActiveApplicationID = int.TryParse(result?.ToString(), out int Output) ? Output : (int?)null;
+                    }
+                }
+            }
+            catch (MySqlException e)
+            {
+                string source = $"LocalDrivingLicenseApplications.IsThereAnActiveApplication";
+
+                try
+                {
+                    if (!EventLog.SourceExists(source))
+                    {
+                        EventLog.CreateEventSource(source, _LogName);
+                    }
+
+                    EventLog.WriteEntry(source, e.Message, EventLogEntryType.Error);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error writting to events: {ex.Message}.");
+                }
+            }
+
+            return ActiveApplicationID;
+        }
+
         public static DataTable GetApplications<T>()
         {
             var AttributeTable = (ClsTableAttribute)Attribute.GetCustomAttribute(typeof(T), typeof(ClsTableAttribute));
@@ -28,7 +73,7 @@ namespace DataAccessLayer
                 {
                     connection.Open();
 
-                    string Query = "SELECT L.LocalDrivingLicenseApplicationID, LC.Title, Concat_ws(' ', P.FirstName, P.SecondName, P.ThirdName, P.LastName) as FullName, P.NationID, A.ApplicationDate, CASE WHEN A.ApplicationStatus = 1 THEN 'New' WHEN A.ApplicationStatus = 2 THEN 'Cancelled' WHEN A.ApplicationStatus = 3 THEN 'Compeleted' ELSE 'Unknown' END AS ApplicationStatus, A.LastStatusDate, U.Username FROM LocalDrivingLicenseApplications L INNER JOIN Applications A ON A.ApplicationID = L.ApplicationID INNER JOIN People P ON A.ApplicationPersonID = P.PersonID INNER JOIN LicenseClasses LC ON L.LicenseClassID = LC.LicenseClassID INNER JOIN Users U ON A.CreatedByUserID = U.UserID";
+                    string Query = "SELECT L.LocalDrivingLicenseApplicationID, LC.Title, Concat_ws(' ', P.FirstName, P.SecondName, P.ThirdName, P.LastName) as FullName, P.NationID, A.ApplicationDate, CASE WHEN A.ApplicationStatus = 1 THEN 'New' WHEN A.ApplicationStatus = 2 THEN 'Cancelled' WHEN A.ApplicationStatus = 3 THEN 'Compeleted' ELSE 'Unknown' END AS ApplicationStatus, A.LastStatusDate, U.Username FROM LocalDrivingLicenseApplications L INNER JOIN Applications A ON A.ApplicationID = L.ApplicationID INNER JOIN People P ON A.ApplicationPersonID = P.PersonID INNER JOIN LicenseClasses LC ON L.LicenseClassID = LC.LicenseClassID INNER JOIN Users U ON A.CreatedByUserID = U.UserID ORDER BY L.LocalDrivingLicenseApplicationID ASC ";
 
                     using (MySqlCommand command = new MySqlCommand(Query, connection))
                     {

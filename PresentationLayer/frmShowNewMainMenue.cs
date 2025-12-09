@@ -2,6 +2,7 @@
 using PresentationLayer.Applications.ApplicationTypes;
 using PresentationLayer.Applications.LocalDrivingLicenseApplications;
 using PresentationLayer.Classes;
+using PresentationLayer.InterFaces;
 using PresentationLayer.People;
 using PresentationLayer.Properties;
 using PresentationLayer.TestTypes;
@@ -28,7 +29,7 @@ namespace PresentationLayer
 
         public enum  EnForm 
         {
-            ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo , UpdateApplicationTypeInfo , ManageTestTypes , CreateTestTypeInfo , UpdateTestTypeInfo , ManageLocalDrivingLicenseApplications
+            ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo , UpdateApplicationTypeInfo , ManageTestTypes , CreateTestTypeInfo , UpdateTestTypeInfo , ManageLocalDrivingLicenseApplications, CreateLocalDrivingLicenseApplicationInfo, UpdateLocalDrivingLicenseApplicationInfo
         }
 
         private Form _PushForm(EnForm enform)
@@ -86,7 +87,11 @@ namespace PresentationLayer
                 case EnForm.ManageLocalDrivingLicenseApplications:
                     return new frmShowManageLocalDrivingLicenseApplicationsList();
 
+                case EnForm.CreateLocalDrivingLicenseApplicationInfo:
+                    return new frmShowCreateUpdateLocalDrivingLicenseApplicationInfo();
 
+                case EnForm.UpdateLocalDrivingLicenseApplicationInfo:
+                    return new frmShowCreateUpdateLocalDrivingLicenseApplicationInfo(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow);
 
                 case EnForm.Login:
                     return new Logins.frmShowLoginInfo();
@@ -109,36 +114,28 @@ namespace PresentationLayer
                 {
                     child.LoadInfo(frmShowManagePeopleList.SelectedRow);
                 }
-                else if (OutForm is People.frmShowCreateUpdatePersonInfo childOne)
+                
+
+                
+                if (OutForm is ILoadableForm loadable)
                 {
-                    childOne.LoadInfo(frmShowManagePeopleList.SelectedRow);
-                }
-                else if (OutForm is Users.frmShowUserInfo childTwo)
-                {
-                    childTwo.LoadInfo(frmShowManageUsersList.SelectedRow);
-                }
-                else if (OutForm is People.frmShowFindPersonInfo childThree)
-                {
-                    childThree.LoadInfo(frmShowManagePeopleList.SelectedRow);
-                }
-                else if (OutForm is Users.frmShowCreateUpdateUserInfo ChildFour)
-                {
-                    ChildFour.LoadInfo(frmShowManageUsersList.SelectedRow);
-                }
-                else if (OutForm is Users.frmShowUserChangePassword childFive)
-                {
-                    childFive.LoadInfo(frmShowManageUsersList.SelectedRow);
-                }
-                else if (OutForm is frmShowCreateUpdateApplicationTypeInfo childSix)
-                {
-                    childSix.LoadInfo(frmShowManageApplicationTypesList.SelectedRow);
-                }
-                else if (OutForm is frmShowCreateUpdateTestTypeInfo childSeven)
-                {
-                    childSeven.LoadInfo(frmShowManageTestTypeList.SelectdRow);
+                    int? row = null;
+
+                    if (OutForm is frmShowPersonInfo || OutForm is frmShowCreateUpdatePersonInfo || OutForm is frmShowFindPersonInfo)
+                        row = frmShowManagePeopleList.SelectedRow;
+                    else if (OutForm is frmShowUserInfo || OutForm is frmShowCreateUpdateUserInfo || OutForm is frmShowUserChangePassword)
+                        row = frmShowManageUsersList.SelectedRow;
+                    else if (OutForm is frmShowCreateUpdateApplicationTypeInfo)
+                        row = frmShowManageApplicationTypesList.SelectedRow;
+                    else if (OutForm is frmShowCreateUpdateTestTypeInfo)
+                        row = frmShowManageTestTypeList.SelectdRow;
+                    else if (OutForm is frmShowCreateUpdateLocalDrivingLicenseApplicationInfo)
+                        row = frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow;
+
+                    loadable.LoadInfo(row);
                 }
 
-                    Text = OutForm.Text;
+                Text = OutForm.Text;
                 lblMood.Text = OutForm.Text;
 
                 OutForm.BringToFront();

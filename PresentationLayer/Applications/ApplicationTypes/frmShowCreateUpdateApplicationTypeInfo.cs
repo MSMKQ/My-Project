@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using PresentationLayer.InterFaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Applications.ApplicationTypes
 {
-    public partial class frmShowCreateUpdateApplicationTypeInfo : Form
+    public partial class frmShowCreateUpdateApplicationTypeInfo : Form, ILoadableForm
     {
         private enum EnMood { Create , Update }
         private EnMood _Mood;

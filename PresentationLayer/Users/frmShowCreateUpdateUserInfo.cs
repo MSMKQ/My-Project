@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using PresentationLayer.Classes;
+using PresentationLayer.InterFaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Users
 {
-    public partial class frmShowCreateUpdateUserInfo : Form
+    public partial class frmShowCreateUpdateUserInfo : Form, ILoadableForm
     {
         private enum EnMood { Create , Update }
         private EnMood _Mood;

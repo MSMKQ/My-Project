@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ctrlShowUserInfo1 = new PresentationLayer.Users.Controls.ctrlShowUserInfo();
             this.label1 = new System.Windows.Forms.Label();
+            this.ctrlShowUserInfo1 = new PresentationLayer.Users.Controls.ctrlShowUserInfo();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,14 +52,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(695, 458);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // ctrlShowUserInfo1
-            // 
-            this.ctrlShowUserInfo1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctrlShowUserInfo1.Location = new System.Drawing.Point(20, 32);
-            this.ctrlShowUserInfo1.Name = "ctrlShowUserInfo1";
-            this.ctrlShowUserInfo1.Size = new System.Drawing.Size(654, 394);
-            this.ctrlShowUserInfo1.TabIndex = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -73,6 +65,14 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // ctrlShowUserInfo1
+            // 
+            this.ctrlShowUserInfo1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlShowUserInfo1.Location = new System.Drawing.Point(20, 32);
+            this.ctrlShowUserInfo1.Name = "ctrlShowUserInfo1";
+            this.ctrlShowUserInfo1.Size = new System.Drawing.Size(654, 394);
+            this.ctrlShowUserInfo1.TabIndex = 0;
+            // 
             // frmShowUserInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -81,6 +81,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmShowUserInfo";
             this.Text = "frmShowUserInfo";
+            this.Load += new System.EventHandler(this.frmShowUserInfo_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

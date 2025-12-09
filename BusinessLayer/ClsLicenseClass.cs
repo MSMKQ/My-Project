@@ -16,6 +16,7 @@ namespace BusinessLayer
 
         [ClsKey("LicenseClassID")]
         public int? LicenseClassID { get; set; }
+        [ClsString("Title")]
         public string Title { get; set; }
         public string Description { get; set; }
         public byte? MinimumAllowedAge { get; set; }
@@ -37,6 +38,18 @@ namespace BusinessLayer
         public static ClsLicenseClass GetInfoByID(int? LicenseClassID)
         {
             ClsLicenseClass _LicenseClass = ClsFunctions.GetInfoByID<ClsLicenseClass>(LicenseClassID);
+
+            if ( _LicenseClass != null )
+            {
+                _Mood = EnMood.Update;
+            }
+
+            return _LicenseClass;
+        }
+
+        public static ClsLicenseClass GetInfoByTitle(string Title)
+        {
+            ClsLicenseClass _LicenseClass = ClsFunctions.GetInfoByString<ClsLicenseClass>(Title);
 
             if ( _LicenseClass != null )
             {
