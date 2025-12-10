@@ -12,14 +12,13 @@ namespace BusinessLayer
     public class ClsLocalDrivingLicenseApplication : ClsApplication
     {
         private enum EnMood { Create , Update }
-        private static EnMood _Mood;
+        private EnMood _Mood;
 
         [ClsKey("LocalDrivingLicenseApplicationID")]
         public int? LocalDrivingLicenseApplicationID { get; set; }
         public int? LicenseClassID { get; set; }
 
         public ClsLicenseClass LicenseClassInfo;
-        public ClsApplication ApplicationInfo;
 
         public ClsLocalDrivingLicenseApplication()
         {
@@ -27,6 +26,23 @@ namespace BusinessLayer
             LicenseClassID = null;
 
             _Mood = EnMood.Create;
+        }
+
+        public ClsLocalDrivingLicenseApplication(ClsLocalDrivingLicenseApplication _Local, ClsApplication _App)
+        {
+            LocalDrivingLicenseApplicationID = _Local.LocalDrivingLicenseApplicationID;
+            ApplicationID = _App.ApplicationID;
+            ApplicationPersonID = _App.ApplicationPersonID;
+            ApplicationDate = _App.ApplicationDate;
+            ApplicationTypeID = _App.ApplicationTypeID;
+            ApplicationStatus = _App.ApplicationStatus;
+            LastStatusDate = _App.LastStatusDate;
+            PaidFees = _App.PaidFees;
+            CreatedByUserID = _App.CreatedByUserID;
+            LicenseClassID = _Local.LicenseClassID;
+
+            LicenseClassInfo = ClsLicenseClass.GetInfoByID(_Local.LicenseClassID);
+            _Mood = EnMood.Update;
         }
 
         public static DataTable GetApplications()
@@ -38,27 +54,66 @@ namespace BusinessLayer
         {
             ClsLocalDrivingLicenseApplication _Local = ClsFunctions.GetInfoByID<ClsLocalDrivingLicenseApplication>(LocalDrivingLicenseApplicationID);
 
-            if ( _Local != null )
+            if (_Local != null && _Local.ApplicationID.HasValue)
             {
-                _Mood = EnMood.Update;
-            }
+                _Local._Mood = EnMood.Update;
 
-            if ( _Local.LicenseClassID.HasValue)
-            {
-                _Local.LicenseClassInfo = ClsLicenseClass.GetInfoByID(_Local.LicenseClassID);
-            }
+                ClsApplication _App = ClsApplication.GetInfoByID(_Local.ApplicationID);
 
-            if ( _Local.ApplicationID.HasValue )
-            {
-                _Local.ApplicationInfo = ClsApplication.GetInfoByID(_Local.ApplicationID);
-            }
 
-            return _Local;
+                return new ClsLocalDrivingLicenseApplication(_Local, _App);
+
+            }
+            else
+                return null;
         }
 
         public static int? IsThereAnActiveApplication(int? ApplicationPersonID, int? LicenseClassID)
         {
             return ClsLocalDrivingLicenseApplicationDataAccess.IsThereAnActiveApplication(ApplicationPersonID, LicenseClassID);
         }
+
+        private bool Create()
+        {
+            LocalDrivingLicenseApplicationID = ClsFunctions.Create(this);
+
+            return (LocalDrivingLicenseApplicationID.HasValue);
+        }
+
+        private bool Update()
+        {
+            return ClsFunctions.Update(this);
+        }
+
+        public bool Save()
+        {
+            Mood = (ClsApplication.EnMood)_Mood;
+
+            if (!base.Save())
+                return false;
+
+            switch ( _Mood )
+            {
+                case EnMood.Create:
+                    if (!Create())
+                        return false;
+                    
+                    _Mood = EnMood.Update;
+                    return true;
+
+                case EnMood.Update:
+                    return Update();
+
+                default:
+                    throw new InvalidOperationException($"Unsupport Mood: {_Mood}.");
+            }
+        }
+
+        public static bool Delete(int? LocalDrivingLicenseApplicationID)
+        {
+            return ClsFunctions.Delete<ClsLocalDrivingLicenseApplication>(LocalDrivingLicenseApplicationID);
+        }
+
+        
     }
 }

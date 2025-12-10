@@ -36,11 +36,14 @@
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvApplications = new System.Windows.Forms.DataGridView();
-            this.btnCreate = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.showLocalDrivingLicenseApplicationInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.showLocalDrivingLicenseApplicationInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showUpdateApplicationInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showDeleteApplicationInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showCancelApplicationInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplications)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -134,6 +137,28 @@
             this.dgvApplications.TabIndex = 13;
             this.dgvApplications.SelectionChanged += new System.EventHandler(this.dgvApplications_SelectionChanged);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showLocalDrivingLicenseApplicationInfoToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.showUpdateApplicationInfoToolStripMenuItem,
+            this.showDeleteApplicationInfoToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.showCancelApplicationInfoToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(249, 190);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(245, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(245, 6);
+            // 
             // btnCreate
             // 
             this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -145,32 +170,40 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showLocalDrivingLicenseApplicationInfoToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.showUpdateApplicationInfoToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(233, 76);
-            // 
             // showLocalDrivingLicenseApplicationInfoToolStripMenuItem
             // 
+            this.showLocalDrivingLicenseApplicationInfoToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.ApplicationTitle;
+            this.showLocalDrivingLicenseApplicationInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showLocalDrivingLicenseApplicationInfoToolStripMenuItem.Name = "showLocalDrivingLicenseApplicationInfoToolStripMenuItem";
-            this.showLocalDrivingLicenseApplicationInfoToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.showLocalDrivingLicenseApplicationInfoToolStripMenuItem.Size = new System.Drawing.Size(248, 38);
             this.showLocalDrivingLicenseApplicationInfoToolStripMenuItem.Text = "Show Application Info";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(229, 6);
             // 
             // showUpdateApplicationInfoToolStripMenuItem
             // 
+            this.showUpdateApplicationInfoToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.edit_32;
+            this.showUpdateApplicationInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showUpdateApplicationInfoToolStripMenuItem.Name = "showUpdateApplicationInfoToolStripMenuItem";
-            this.showUpdateApplicationInfoToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.showUpdateApplicationInfoToolStripMenuItem.Size = new System.Drawing.Size(248, 38);
             this.showUpdateApplicationInfoToolStripMenuItem.Text = "Show Update Application Info";
             this.showUpdateApplicationInfoToolStripMenuItem.Click += new System.EventHandler(this.showUpdateApplicationInfoToolStripMenuItem_Click);
+            // 
+            // showDeleteApplicationInfoToolStripMenuItem
+            // 
+            this.showDeleteApplicationInfoToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.Delete_32_Outline_Red;
+            this.showDeleteApplicationInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.showDeleteApplicationInfoToolStripMenuItem.Name = "showDeleteApplicationInfoToolStripMenuItem";
+            this.showDeleteApplicationInfoToolStripMenuItem.Size = new System.Drawing.Size(248, 38);
+            this.showDeleteApplicationInfoToolStripMenuItem.Text = "Show Delete Application Info";
+            this.showDeleteApplicationInfoToolStripMenuItem.Click += new System.EventHandler(this.showDeleteApplicationInfoToolStripMenuItem_Click);
+            // 
+            // showCancelApplicationInfoToolStripMenuItem
+            // 
+            this.showCancelApplicationInfoToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.Delete_32;
+            this.showCancelApplicationInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.showCancelApplicationInfoToolStripMenuItem.Name = "showCancelApplicationInfoToolStripMenuItem";
+            this.showCancelApplicationInfoToolStripMenuItem.Size = new System.Drawing.Size(248, 38);
+            this.showCancelApplicationInfoToolStripMenuItem.Text = "Show Cancel Application Info";
+            this.showCancelApplicationInfoToolStripMenuItem.Click += new System.EventHandler(this.showCancelApplicationInfoToolStripMenuItem_Click);
             // 
             // frmShowManageLocalDrivingLicenseApplicationsList
             // 
@@ -204,5 +237,8 @@
         private System.Windows.Forms.ToolStripMenuItem showLocalDrivingLicenseApplicationInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem showUpdateApplicationInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showDeleteApplicationInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem showCancelApplicationInfoToolStripMenuItem;
     }
 }

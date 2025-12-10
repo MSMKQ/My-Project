@@ -117,5 +117,42 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
                 parent.ShowForm(frmShowNewMainMenue.EnForm.UpdateLocalDrivingLicenseApplicationInfo);
             }
         }
+
+        private void showDeleteApplicationInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int Id = _SelectedRow().Value;
+
+            if (MessageBox.Show($"Are you sure you want delete this Application No.{Id} ?", $"Delete Application No.{Id}", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            if ( ClsLocalDrivingLicenseApplication.Delete(Id) )
+            {
+                MessageBox.Show($"This Local Driving License Application No.{Id} Deleted successfully.", $"Application Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmShowManageLocalDrivingLicenseApplicationsList_Load(null, null);
+            }
+        }
+
+        private void showCancelApplicationInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int Id = _SelectedRow().Value;
+
+            if (MessageBox.Show($"Are you sure you want cancel this Application No.{Id} ?", $"Cancel Application No.{Id}", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            ClsLocalDrivingLicenseApplication _Local = ClsLocalDrivingLicenseApplication.GetInfoByID(Id);
+
+            if (_Local != null)
+            {
+                if (_Local.Cancel())
+                {
+                    MessageBox.Show($"This Application No.{Id} was cancelled successfully.", $"Application Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmShowManageLocalDrivingLicenseApplicationsList_Load(null, null);
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Error cannot cancel this application.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

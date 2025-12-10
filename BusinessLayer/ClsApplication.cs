@@ -11,7 +11,9 @@ namespace BusinessLayer
     public class ClsApplication
     {
         public enum EnMood { Create , Update }
-        public static EnMood Mood;
+        public EnMood Mood;
+
+        public enum EnStatus { New = 1, Cancelled = 2, Compeleted = 3 }
 
         [ClsKey("ApplicationID")]
         public int? ApplicationID { get; set; }
@@ -45,7 +47,7 @@ namespace BusinessLayer
 
             if ( _Application != null)
             {
-                Mood = EnMood.Update;
+                _Application.Mood = EnMood.Update;
             }
 
             if ( _Application.CreatedByUserID.HasValue )
@@ -54,6 +56,42 @@ namespace BusinessLayer
             }
 
             return _Application;
+        }
+
+        private bool Create()
+        {
+            ApplicationID = ClsFunctions.Create(this);
+
+            return (ApplicationID.HasValue);
+        }
+
+        private bool Update()
+        {
+            return ClsFunctions.Update(this);
+        }
+
+        public bool Save()
+        {
+            switch (Mood)
+            {
+                case EnMood.Create:
+                    if (!Create())
+                        return false;
+
+                    Mood = EnMood.Update;
+                    return true;
+
+                case EnMood.Update:
+                    return Update();
+
+                default:
+                    throw new InvalidOperationException($"Unsupport Mood: {Mood}");
+            }
+        }
+
+        public bool Cancel()
+        {
+            return ClsApplicationDataAccess.UpdateStatus(ApplicationID, (byte)EnStatus.Cancelled);
         }
     }
 }

@@ -462,5 +462,11 @@
   <ItemGroup>
     <None Include="Resources\License Type 32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete-32-Outline-Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete 32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

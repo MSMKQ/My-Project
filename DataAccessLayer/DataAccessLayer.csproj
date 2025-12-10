@@ -90,6 +90,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClsApplicationDataAccess.cs" />
     <Compile Include="ClsDataAccessSettings.cs" />
     <Compile Include="ClsFunctions.cs" />
     <Compile Include="ClsLicenseDataAccess.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="ClsReadingHelper.cs" />
     <Compile Include="ClsAttributes.cs" />
     <Compile Include="ClsUserDataAccess.cs" />
+    <Compile Include="GenericMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

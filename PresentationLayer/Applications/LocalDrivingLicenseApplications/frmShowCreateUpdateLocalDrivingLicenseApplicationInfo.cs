@@ -90,11 +90,11 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             }
 
             lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
-            ctrlShowFindPersonInfo1.LoadPersonInfo(_LocalDrivingLicenseApplication.ApplicationInfo.ApplicationPersonID);
-            lblApplicationDate.Text = _LocalDrivingLicenseApplication.ApplicationInfo.ApplicationDate.Value.ToShortDateString();
+            ctrlShowFindPersonInfo1.LoadPersonInfo(_LocalDrivingLicenseApplication.ApplicationPersonID);
+            lblApplicationDate.Text = _LocalDrivingLicenseApplication.ApplicationDate.Value.ToShortDateString();
             cbLicenseClass.Text = _LocalDrivingLicenseApplication.LicenseClassInfo.Title;
-            lblPaidFees.Text = _LocalDrivingLicenseApplication.ApplicationInfo.PaidFees.Value.ToString("N3");
-            lblCreatedByUserID.Text = _LocalDrivingLicenseApplication.ApplicationInfo.CreatedByInfo.Username;
+            lblPaidFees.Text = _LocalDrivingLicenseApplication.PaidFees.Value.ToString("N3");
+            lblCreatedByUserID.Text = ClsUser.GetInfoByID(_LocalDrivingLicenseApplication.CreatedByUserID).Username;
         }
 
         private void frmShowCreateUpdateLocalDrivingLicenseApplicationInfo_Load(object sender, EventArgs e)
@@ -157,7 +157,30 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
                 return;
             }
 
-            
+            _LocalDrivingLicenseApplication.ApplicationPersonID = _SelectedPersonID;
+            _LocalDrivingLicenseApplication.ApplicationDate = DateTime.Now;
+            _LocalDrivingLicenseApplication.ApplicationTypeID = (int)ClsApplicationType.EnServices.NewLocalDriving;
+            _LocalDrivingLicenseApplication.ApplicationStatus = (int)ClsApplication.EnStatus.New;
+            _LocalDrivingLicenseApplication.LastStatusDate = DateTime.Now;
+            _LocalDrivingLicenseApplication.PaidFees = ClsApplicationType.GetInfoByID(ClsApplicationType.EnServices.NewLocalDriving).Fees.Value;
+            _LocalDrivingLicenseApplication.CreatedByUserID = ClsGlobal.CurrentUser.UserID;
+            _LocalDrivingLicenseApplication.LicenseClassID = _LicenseClassID;
+
+            if ( _LocalDrivingLicenseApplication.Save() )
+            {
+                _Mood = EnMood.Update;
+                int Id = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.Value;
+                lblLocalDrivingLicenseApplicationID.Text = Id.ToString();
+                Text = $"Show Update Local Driving License Application No.{Id} Info";
+                btnSave.Text = "Update";
+                ctrlShowFindPersonInfo1.FilterEnabled = false;
+
+                MessageBox.Show($"This Local Driving License Application No.{Id} Data Saved Successfully.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error: Data Not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Management;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,9 +17,60 @@ namespace DataAccessLayer
     public class ClsFunctions
     {
         private static string _LogName = "Application";
-        
 
 
+
+        public static IEnumerable<PropertyInfo> GetMappedProperties<T>()
+        {
+            return typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy).Where(p => p.CanWrite && p.PropertyType.IsPrimitive || p.PropertyType.IsEnum || p.PropertyType == typeof(string) || Nullable.GetUnderlyingType(p.PropertyType) != null);
+        }
+
+        public static string BuildInsertQuery<T>(T obj)
+        {
+            var AttributeTable = (ClsTableAttribute)Attribute.GetCustomAttribute(typeof(T), typeof(ClsTableAttribute));
+            var KeyProp = typeof(T).GetProperties().FirstOrDefault(p => Attribute.IsDefined(p, typeof(ClsKeyAttribute)));
+
+            if (AttributeTable == null || KeyProp == null)
+                throw new InvalidOperationException("Table or Key is missing.");
+
+            string table = AttributeTable.Name;
+            string IdColumn = KeyProp.Name;
+
+            var props = GetMappedProperties<T>().Where(p => p.Name != IdColumn);
+
+            string columns = string.Join(", ", props.Select(p => p.Name));
+            string values = string.Join(", ", props.Select(p => $"@{p.Name}"));
+
+            return $"INSERT INTO {table}({columns}) VALUES({values});";
+        }
+
+        public static int? Create<T>(T obj)
+        {
+            string Query = BuildInsertQuery<T>(obj);
+            int? Id = null;
+
+            using (MySqlConnection connection = new MySqlConnection(ClsDataAccessSettings.ConnectionString))
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(Query, connection))
+                {
+                    foreach(var prop in GetMappedProperties<T>())
+                    {
+                        object value = prop.GetValue(obj) ?? DBNull.Value;
+                        command.Parameters.AddWithValue($"@{prop.Name}", value);
+                    }
+
+                    command.ExecuteNonQuery();
+
+                    command.CommandText = "SELECT LAST_INSERT_ID();";
+                    object result = command.ExecuteNonQuery();
+                    Id = int.TryParse(result?.ToString(), out int Output) ? Output : (int?)null;
+                }
+            }
+
+            return Id;
+        }
 
         public static DataTable GetDataTable<T>()
         {
@@ -248,67 +300,6 @@ namespace DataAccessLayer
             }
 
             return IsFound ? obj : default;
-        }
-
-        public static int? Create<T>(T obj)
-        {
-            if (obj == null) throw new InvalidOperationException("Object is missing");
-
-            var tableAttri = (ClsTableAttribute)Attribute.GetCustomAttribute(typeof(T), typeof(ClsTableAttribute));
-            var KeyProp = typeof(T).GetProperties().FirstOrDefault(p => Attribute.IsDefined(p, typeof(ClsKeyAttribute)));
-
-            if (tableAttri == null || KeyProp == null) throw new InvalidOperationException("Table is missiong.");
-
-            string table = tableAttri.Name;
-            string IdColumn = KeyProp.Name;
-
-            int? Id = null;
-
-            try
-            {
-                using (MySqlConnection connection = new MySqlConnection(ClsDataAccessSettings.ConnectionString))
-                {
-                    connection.Open();
-
-                    var ColumnNames = typeof(T).GetProperties().Where(p => p.Name != IdColumn);
-
-                    string Paramertes = string.Join(", ", ColumnNames.Select(p => p.Name));
-                    string Values = string.Join(", ", ColumnNames.Select(v => $"@{v.Name}"));
-                    string Query = $"INSERT INTO {table}({Paramertes}) VALUES({Values}); SELECT LAST_INSERT_ID();";
-
-                    using (MySqlCommand command = new MySqlCommand(Query, connection))
-                    {
-                        foreach (var prop in ColumnNames)
-                        {
-                            object result = prop.GetValue(obj) ?? DBNull.Value;
-                            command.Parameters.AddWithValue($"@{prop.Name}", result);
-                        }
-
-                        object IdResult = command.ExecuteScalar();
-                        Id = int.TryParse(IdResult?.ToString(), out int OutPut) ? OutPut : (int?)null;
-                    }
-                }
-            }
-            catch (MySqlException e)
-            {
-                string source = $"{table}.Create";
-
-                try
-                {
-                    if (!EventLog.SourceExists(source))
-                    {
-                        EventLog.CreateEventSource(source, _LogName);
-                    }
-
-                    EventLog.WriteEntry(source, e.Message, EventLogEntryType.Error);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error writting message to events: {ex.Message}.");
-                }
-            }
-
-            return Id;
         }
 
         public static bool Update<T>(T obj) where T :new()
@@ -586,6 +577,57 @@ namespace DataAccessLayer
             return IsFound;
         }
 
+        public static bool Delete<T>(int? Id)
+        {
+            var AttributeTable = (ClsTableAttribute)Attribute.GetCustomAttribute(typeof(T), typeof(ClsTableAttribute));
+            var KeyProp = typeof(T).GetProperties().FirstOrDefault(p => Attribute.IsDefined(p, typeof(ClsKeyAttribute)));
+
+            if (AttributeTable == null || KeyProp == null)
+                throw new InvalidOperationException("Table or Key is missing.");
+
+            string table = AttributeTable.Name;
+            string IdColumn = KeyProp.Name;
+
+            int RowsEffected = 0;
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ClsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = $"DELETE FROM {table} WHERE {IdColumn} = @Id";
+
+                    using (MySqlCommand command = new MySqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue($"@Id", Id);
+
+                        RowsEffected = command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (MySqlException e)
+            {
+                string source = $"{table}.Delete";
+
+                try
+                {
+                    if (!EventLog.SourceExists(source))
+                    {
+                        EventLog.CreateEventSource(source, _LogName);
+                    }
+
+                    EventLog.WriteEntry(source, e.Message, EventLogEntryType.Error);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error writting message to events: {ex.Message}.");
+                }
+            }
+
+            return (RowsEffected > 0);
+        }
+
 
 
 
@@ -829,6 +871,11 @@ namespace DataAccessLayer
 
             return (RowsEffector > 0);
         }
+
+
+        
+
+
 
     }
 }
