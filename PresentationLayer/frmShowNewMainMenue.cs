@@ -15,6 +15,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,7 +30,7 @@ namespace PresentationLayer
 
         public enum  EnForm 
         {
-            ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo , UpdateApplicationTypeInfo , ManageTestTypes , CreateTestTypeInfo , UpdateTestTypeInfo , ManageLocalDrivingLicenseApplications, CreateLocalDrivingLicenseApplicationInfo, UpdateLocalDrivingLicenseApplicationInfo
+            ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo , UpdateApplicationTypeInfo , ManageTestTypes , CreateTestTypeInfo , UpdateTestTypeInfo , ManageLocalDrivingLicenseApplications, CreateLocalDrivingLicenseApplicationInfo, UpdateLocalDrivingLicenseApplicationInfo ,ShowLocalDrivingLicenseApplicationInfo
         }
 
         private Form _PushForm(EnForm enform)
@@ -93,6 +94,9 @@ namespace PresentationLayer
                 case EnForm.UpdateLocalDrivingLicenseApplicationInfo:
                     return new frmShowCreateUpdateLocalDrivingLicenseApplicationInfo(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow);
 
+                case EnForm.ShowLocalDrivingLicenseApplicationInfo:
+                    return new frmShowLocalDrivingLicenseApplicationInfo(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow);
+
                 case EnForm.Login:
                     return new Logins.frmShowLoginInfo();
 
@@ -115,8 +119,6 @@ namespace PresentationLayer
                     child.LoadInfo(frmShowManagePeopleList.SelectedRow);
                 }
                 
-
-                
                 if (OutForm is ILoadableForm loadable)
                 {
                     int? row = null;
@@ -129,7 +131,7 @@ namespace PresentationLayer
                         row = frmShowManageApplicationTypesList.SelectedRow;
                     else if (OutForm is frmShowCreateUpdateTestTypeInfo)
                         row = frmShowManageTestTypeList.SelectdRow;
-                    else if (OutForm is frmShowCreateUpdateLocalDrivingLicenseApplicationInfo)
+                    else if (OutForm is frmShowCreateUpdateLocalDrivingLicenseApplicationInfo || OutForm is frmShowLocalDrivingLicenseApplicationInfo)
                         row = frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow;
 
                     loadable.LoadInfo(row);
@@ -179,7 +181,7 @@ namespace PresentationLayer
 
                 if (flpSideBar.Width == flpSideBar.MaximumSize.Width)
                 {
-                    lblExpandedClose.Text = "<<   Close";
+                    lblExpandedClose.Text = (comboBox1.Text.Equals("Arabic", StringComparison.OrdinalIgnoreCase)) ? "<<   اغلاق" : "<<   Close";
                     _sidebarExpanded = false;
                     timer1.Stop();
                 }
@@ -190,7 +192,7 @@ namespace PresentationLayer
 
                 if (flpSideBar.Width == flpSideBar.MinimumSize.Width)
                 {
-                    lblExpandedClose.Text = ">>   Open";
+                    lblExpandedClose.Text = (comboBox1.Text.Equals("Arabic", StringComparison.OrdinalIgnoreCase)) ? "<<   افتح" : "<<   Open";
                     _sidebarExpanded = true;
                     timer1.Stop();
                 }
@@ -201,7 +203,7 @@ namespace PresentationLayer
         {
             timer1.Start();
 
-            if (flpSideBar.Width == 250)
+            if (flpSideBar.Width == flpSideBar.MaximumSize.Width)
             {
                 pictureBox1.Image = Resources.arrow_right_32;
             }
@@ -234,6 +236,7 @@ namespace PresentationLayer
                 }
             }
         }
+
         private void timer3_Tick(object sender, EventArgs e)
         {
             if ( _ServicesCollapsible )
@@ -294,16 +297,7 @@ namespace PresentationLayer
         private void frmShowNewMainMenue_Load(object sender, EventArgs e)
         {
             UserLoad(ClsGlobal.CurrentUser != null);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void lblMenue_Click(object sender, EventArgs e)
-        {
-            
+            comboBox1.SelectedIndex = 0;
         }
 
         private void lblExpanded_Click(object sender, EventArgs e)
@@ -339,14 +333,26 @@ namespace PresentationLayer
             timer3.Start();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnLocalDrivingLicenseApplications_Click(object sender, EventArgs e)
         {
             ShowForm(EnForm.ManageLocalDrivingLicenseApplications);
+        }
+
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (flpSideBar.Width == flpSideBar.MaximumSize.Width)
+            {
+                lblExpandedClose.Text = (comboBox1.Text.Equals("Arabic")) ? "<<   اغلاق" : "<<   Close";
+
+            }
+            else
+            {
+                lblExpandedClose.Text = (comboBox1.Text.Equals("Arabic")) ? "<<   افتح" : "<<   Open";
+
+            }
+
+
         }
     }
 }

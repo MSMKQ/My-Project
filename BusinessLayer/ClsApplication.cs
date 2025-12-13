@@ -25,7 +25,9 @@ namespace BusinessLayer
         public decimal? PaidFees { get; set; }
         public int? CreatedByUserID { get; set; }
 
+        public ClsPerson PersonInfo;
         public ClsUser CreatedByInfo;
+        public ClsApplicationType ApplicationTypeInfo;
 
         public ClsApplication()
         {
@@ -45,14 +47,24 @@ namespace BusinessLayer
         {
             ClsApplication _Application = ClsFunctions.GetInfoByID<ClsApplication>(ApplicationID);
 
-            if ( _Application != null)
+            if ( _Application != null )
             {
                 _Application.Mood = EnMood.Update;
+            }
+
+            if ( _Application.ApplicationPersonID.HasValue )
+            {
+                _Application.PersonInfo = ClsPerson.GetInfoByID(_Application.ApplicationPersonID);
             }
 
             if ( _Application.CreatedByUserID.HasValue )
             {
                 _Application.CreatedByInfo = ClsUser.GetInfoByID(_Application.CreatedByUserID);
+            }
+
+            if ( _Application.ApplicationTypeID.HasValue )
+            {
+                _Application.ApplicationTypeInfo = ClsApplicationType.GetInfoByID(_Application.ApplicationTypeID);
             }
 
             return _Application;

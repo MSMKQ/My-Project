@@ -108,6 +108,8 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             {
                 parent.ShowForm(frmShowNewMainMenue.EnForm.CreateLocalDrivingLicenseApplicationInfo);
             }
+
+            frmShowManageLocalDrivingLicenseApplicationsList_Load(null, null);
         }
 
         private void showUpdateApplicationInfoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,6 +118,8 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             {
                 parent.ShowForm(frmShowNewMainMenue.EnForm.UpdateLocalDrivingLicenseApplicationInfo);
             }
+
+            frmShowManageLocalDrivingLicenseApplicationsList_Load(null, null);
         }
 
         private void showDeleteApplicationInfoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -152,6 +156,45 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             else
             {
                 MessageBox.Show($"Error cannot cancel this application.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            int Id = _SelectedRow().Value;
+
+            ClsLocalDrivingLicenseApplication _Local = ClsLocalDrivingLicenseApplication.GetInfoByID(Id);
+
+            if ( _Local == null )
+            {
+                MessageBox.Show($"Error: This Local Driving License Application No.{Id} was not found.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            bool IsEnabled = (_Local.ApplicationStatus == (byte)ClsApplication.EnStatus.New);
+
+            tsmiUpdateApplication.Enabled = IsEnabled;
+            tsmiShowDelete.Enabled = IsEnabled;
+            tsmiShowCancel.Enabled = IsEnabled;
+
+            bool VisionTestPassed = _Local.DoesPassedTest(ClsTestType.EnTestType.VisionTest);
+            bool WrittenTestPassed = _Local.DoesPassedTest(ClsTestType.EnTestType.WrittenTest);
+            bool StreetTestPassed = _Local.DoesPassedTest(ClsTestType.EnTestType.StreetTest);
+
+            tsmiScheduleTests.Enabled = !VisionTestPassed && !WrittenTestPassed && !StreetTestPassed && IsEnabled;
+
+            tsmiVisionTest.Enabled = !VisionTestPassed;
+            tsmiWrittenTest.Enabled = VisionTestPassed && !WrittenTestPassed;
+            tsmiStreetTest.Enabled = VisionTestPassed && WrittenTestPassed && !StreetTestPassed;
+
+
+        }
+
+        private void showLocalDrivingLicenseApplicationInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MdiParent is frmShowNewMainMenue parent)
+            {
+                parent.ShowForm(frmShowNewMainMenue.EnForm.ShowLocalDrivingLicenseApplicationInfo);
             }
         }
     }

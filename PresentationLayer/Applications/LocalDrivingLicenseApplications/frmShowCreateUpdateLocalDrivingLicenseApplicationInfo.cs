@@ -151,7 +151,7 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
 
             int? ActiveApplicationID = ClsLocalDrivingLicenseApplication.IsThereAnActiveApplication(_SelectedPersonID, _LicenseClassID);
 
-            if ( ActiveApplicationID != null )
+            if (ActiveApplicationID != null)
             {
                 MessageBox.Show($"There is Already active Application.", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

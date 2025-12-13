@@ -124,3 +124,9 @@ C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.Tes
 C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.TestTypes.frmShowCreateUpdateTestTypeInfo.resources
 C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.Applications.LocalDrivingLicenseApplications.frmShowManageLocalDrivingLicenseApplicationsList.resources
 C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.Applications.LocalDrivingLicenseApplications.frmShowCreateUpdateLocalDrivingLicenseApplicationInfo.resources
+C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.Applications.Controls.ctrlShowApplicationInfo.resources
+C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.Applications.LocalDrivingLicenseApplications.Controls.ctrlShowLocalDrivingLicenseApplicationInfo.resources
+C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.Applications.LocalDrivingLicenseApplications.frmShowLocalDrivingLicenseApplicationInfo.resources
+C:\Mac\Home\Desktop\My Project\PresentationLayer\bin\Debug\ar-BH\PresentationLayer.resources.dll
+C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.frmShowNewMainMenue.ar-BH.resources
+C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\ar-BH\PresentationLayer.resources.dll

@@ -23,6 +23,7 @@ namespace BusinessLayer
         public ClsLocalDrivingLicenseApplication()
         {
             LocalDrivingLicenseApplicationID = null;
+            ApplicationID = null;
             LicenseClassID = null;
 
             _Mood = EnMood.Create;
@@ -114,6 +115,11 @@ namespace BusinessLayer
             return ClsFunctions.Delete<ClsLocalDrivingLicenseApplication>(LocalDrivingLicenseApplicationID);
         }
 
+        public bool DoesPassedTest(ClsTestType.EnTestType TestTypeID)
+        {
+            return ClsLocalDrivingLicenseApplicationDataAccess.DoesPassedTest(LocalDrivingLicenseApplicationID, (byte)TestTypeID);
+        }
         
+
     }
 }

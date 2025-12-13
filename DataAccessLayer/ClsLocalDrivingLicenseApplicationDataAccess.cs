@@ -108,5 +108,49 @@ namespace DataAccessLayer
 
             return _Applications;
         }
+
+        public static bool DoesPassedTest(int? LocalDrivingLicenseApplicationID, byte? TestTypeID)
+        {
+            bool TestResult = false;
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ClsDataAccessSettings.ConnectionString))
+                {
+                    connection.Open();
+
+                    string Query = $"SELECT T.TestResult FROM localdrivinglicenseapplications L INNER JOIN testappointments TA ON L.LocalDrivingLicenseApplicationID = TA.LocalDrivingLicenseApplicationID INNER JOIN Tests T ON T.TestAppointmentID = TA.TestAppointmentID WHERE L.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TA.TestTypeID = @TestTypeID ORDER BY T.TestID DESC LIMIT 1";
+
+                    using (MySqlCommand command = new MySqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+                        command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+                        object result = command.ExecuteScalar();
+                        TestResult = bool.TryParse(result?.ToString(), out bool Output) ? Output : false;
+                    }
+                }
+            }
+            catch (MySqlException e)
+            {
+                string source = "LocalDrivingLicenseApplication.DoesPassedTest";
+
+                try
+                {
+                    if (!EventLog.SourceExists(source))
+                    {
+                        EventLog.CreateEventSource(source, _LogName);
+                    }
+
+                    EventLog.WriteEntry(source, e.Message, EventLogEntryType.Error);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error writting message to events: {ex.Message}.");
+                }
+            }
+
+            return TestResult;
+        }
     }
 }

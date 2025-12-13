@@ -61,11 +61,29 @@
     <Compile Include="Applications\ApplicationTypes\frmShowManageApplicationTypesList.Designer.cs">
       <DependentUpon>frmShowManageApplicationTypesList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Controls\ctrlShowApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\Controls\ctrlShowApplicationInfo.Designer.cs">
+      <DependentUpon>ctrlShowApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\LocalDrivingLicenseApplications\Controls\ctrlShowLocalDrivingLicenseApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\LocalDrivingLicenseApplications\Controls\ctrlShowLocalDrivingLicenseApplicationInfo.Designer.cs">
+      <DependentUpon>ctrlShowLocalDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\LocalDrivingLicenseApplications\frmShowCreateUpdateLocalDrivingLicenseApplicationInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Applications\LocalDrivingLicenseApplications\frmShowCreateUpdateLocalDrivingLicenseApplicationInfo.Designer.cs">
       <DependentUpon>frmShowCreateUpdateLocalDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\LocalDrivingLicenseApplications\frmShowLocalDrivingLicenseApplicationInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\LocalDrivingLicenseApplications\frmShowLocalDrivingLicenseApplicationInfo.Designer.cs">
+      <DependentUpon>frmShowLocalDrivingLicenseApplicationInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Applications\LocalDrivingLicenseApplications\frmShowManageLocalDrivingLicenseApplicationsList.cs">
       <SubType>Form</SubType>
@@ -193,14 +211,26 @@
     <EmbeddedResource Include="Applications\ApplicationTypes\frmShowManageApplicationTypesList.resx">
       <DependentUpon>frmShowManageApplicationTypesList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Controls\ctrlShowApplicationInfo.resx">
+      <DependentUpon>ctrlShowApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\LocalDrivingLicenseApplications\Controls\ctrlShowLocalDrivingLicenseApplicationInfo.resx">
+      <DependentUpon>ctrlShowLocalDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications\LocalDrivingLicenseApplications\frmShowCreateUpdateLocalDrivingLicenseApplicationInfo.resx">
       <DependentUpon>frmShowCreateUpdateLocalDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\LocalDrivingLicenseApplications\frmShowLocalDrivingLicenseApplicationInfo.resx">
+      <DependentUpon>frmShowLocalDrivingLicenseApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\LocalDrivingLicenseApplications\frmShowManageLocalDrivingLicenseApplicationsList.resx">
       <DependentUpon>frmShowManageLocalDrivingLicenseApplicationsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowMainMenue.resx">
       <DependentUpon>frmShowMainMenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowNewMainMenue.ar-BH.resx">
+      <DependentUpon>frmShowNewMainMenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowNewMainMenue.resx">
       <DependentUpon>frmShowNewMainMenue.cs</DependentUpon>
@@ -467,6 +497,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Delete 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vision Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Written Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Street Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IssueDrivingLicense 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\License View 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PersonLicenseHistory 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test 32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

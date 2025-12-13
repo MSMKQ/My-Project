@@ -33,4 +33,6 @@ namespace DataAccessLayer
         public string Name { get; set; }
         public ClsStringAttribute(string name) => Name = name;
     }
+
+    
 }

@@ -22,7 +22,7 @@ namespace DataAccessLayer
 
         public static IEnumerable<PropertyInfo> GetMappedProperties<T>()
         {
-            return typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy).Where(p => p.CanWrite && p.PropertyType.IsPrimitive || p.PropertyType.IsEnum || p.PropertyType == typeof(string) || Nullable.GetUnderlyingType(p.PropertyType) != null);
+            return typeof(T).GetProperties().Where(p => p.CanWrite && p.PropertyType.IsPrimitive || p.PropertyType.IsEnum || p.PropertyType == typeof(string) || Nullable.GetUnderlyingType(p.PropertyType) != null);
         }
 
         public static string BuildInsertQuery<T>(T obj)
@@ -33,6 +33,8 @@ namespace DataAccessLayer
             if (AttributeTable == null || KeyProp == null)
                 throw new InvalidOperationException("Table or Key is missing.");
 
+            
+
             string table = AttributeTable.Name;
             string IdColumn = KeyProp.Name;
 
@@ -41,32 +43,47 @@ namespace DataAccessLayer
             string columns = string.Join(", ", props.Select(p => p.Name));
             string values = string.Join(", ", props.Select(p => $"@{p.Name}"));
 
-            return $"INSERT INTO {table}({columns}) VALUES({values});";
+            if (table == "LocalDrivingLicenseApplications")
+                return $"INSERT INTO {table}(ApplicationID, LicenseClassID) VALUES(@ApplicationID, @LicenseClassID); SELECT LAST_INSERT_ID();";
+            else
+                return $"INSERT INTO {table}({columns}) VALUES({values}); SELECT LAST_INSERT_ID();";
         }
 
         public static int? Create<T>(T obj)
         {
+            
             string Query = BuildInsertQuery<T>(obj);
             int? Id = null;
 
-            using (MySqlConnection connection = new MySqlConnection(ClsDataAccessSettings.ConnectionString))
+            try
             {
-                connection.Open();
-
-                using (MySqlCommand command = new MySqlCommand(Query, connection))
+                using (MySqlConnection connection = new MySqlConnection(ClsDataAccessSettings.ConnectionString))
                 {
-                    foreach(var prop in GetMappedProperties<T>())
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(Query, connection))
                     {
-                        object value = prop.GetValue(obj) ?? DBNull.Value;
-                        command.Parameters.AddWithValue($"@{prop.Name}", value);
+                        foreach (var prop in GetMappedProperties<T>())
+                        {
+                            object value = prop.GetValue(obj) ?? DBNull.Value;
+                            command.Parameters.AddWithValue($"@{prop.Name}", value);
+                        }
+
+                        object result = command.ExecuteScalar();
+                        Id = int.TryParse(result?.ToString(), out int Output) ? Output : (int?)null;
                     }
-
-                    command.ExecuteNonQuery();
-
-                    command.CommandText = "SELECT LAST_INSERT_ID();";
-                    object result = command.ExecuteNonQuery();
-                    Id = int.TryParse(result?.ToString(), out int Output) ? Output : (int?)null;
                 }
+            }
+            catch (MySqlException e )
+            {
+                string source = $"ClsFunction.Create";
+
+                if (!EventLog.SourceExists(source))
+                {
+                    EventLog.CreateEventSource(source, _LogName);
+                }
+
+                EventLog.WriteEntry(source, e.Message, EventLogEntryType.Error);
             }
 
             return Id;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShowNewMainMenue));
             this.flpSideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -38,6 +39,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.pHome = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnApplications = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnLocalDrivingLicenseApplications = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnPeople = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -49,13 +59,6 @@
             this.btnServices = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
-            this.pHome = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnApplications = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -69,28 +72,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.btnLocalDrivingLicenseApplications = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.flpSideBar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
+            this.pHome.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pServices.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
-            this.pHome.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // flpSideBar
@@ -105,150 +107,169 @@
             this.flpSideBar.Controls.Add(this.panel4);
             this.flpSideBar.Controls.Add(this.panel11);
             this.flpSideBar.Controls.Add(this.panel10);
-            this.flpSideBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flpSideBar.Location = new System.Drawing.Point(0, 0);
-            this.flpSideBar.MaximumSize = new System.Drawing.Size(270, 800);
-            this.flpSideBar.MinimumSize = new System.Drawing.Size(92, 800);
+            resources.ApplyResources(this.flpSideBar, "flpSideBar");
             this.flpSideBar.Name = "flpSideBar";
-            this.flpSideBar.Size = new System.Drawing.Size(270, 800);
-            this.flpSideBar.TabIndex = 1;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblUserName);
             this.panel1.Controls.Add(this.pbUserName);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 138);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
-            this.panel6.Location = new System.Drawing.Point(3, 133);
+            resources.ApplyResources(this.panel6, "panel6");
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(255, 1);
-            this.panel6.TabIndex = 8;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(97, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Adminstrator";
             // 
             // lblUserName
             // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lblUserName, "lblUserName");
             this.lblUserName.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUserName.Location = new System.Drawing.Point(97, 22);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(69, 17);
-            this.lblUserName.TabIndex = 0;
-            this.lblUserName.Text = "Username";
             // 
             // pbUserName
             // 
             this.pbUserName.Image = global::PresentationLayer.Properties.Resources.login_64;
-            this.pbUserName.Location = new System.Drawing.Point(10, 9);
+            resources.ApplyResources(this.pbUserName, "pbUserName");
             this.pbUserName.Name = "pbUserName";
-            this.pbUserName.Size = new System.Drawing.Size(64, 64);
-            this.pbUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUserName.TabIndex = 2;
             this.pbUserName.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::PresentationLayer.Properties.Resources.arrow_left_32;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 86);
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.button2);
-            this.panel9.Location = new System.Drawing.Point(3, 147);
+            resources.ApplyResources(this.panel9, "panel9");
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(247, 51);
-            this.panel9.TabIndex = 12;
             // 
             // button2
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.button2, "button2");
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
             this.button2.Image = global::PresentationLayer.Properties.Resources.menu_Essentials_32;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(-14, -11);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(279, 74);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "                    Home";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // pHome
+            // 
+            this.pHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.pHome.Controls.Add(this.panel12);
+            this.pHome.Controls.Add(this.panel2);
+            this.pHome.Controls.Add(this.panel13);
+            this.pHome.Controls.Add(this.panel7);
+            resources.ApplyResources(this.pHome, "pHome");
+            this.pHome.Name = "pHome";
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.button4);
+            resources.ApplyResources(this.panel12, "panel12");
+            this.panel12.Name = "panel12";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Image = global::PresentationLayer.Properties.Resources.TestType_32;
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnApplications);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // btnApplications
+            // 
+            this.btnApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            resources.ApplyResources(this.btnApplications, "btnApplications");
+            this.btnApplications.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnApplications.Image = global::PresentationLayer.Properties.Resources.home_Essentials__32;
+            this.btnApplications.Name = "btnApplications";
+            this.btnApplications.UseVisualStyleBackColor = false;
+            this.btnApplications.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.btnLocalDrivingLicenseApplications);
+            resources.ApplyResources(this.panel13, "panel13");
+            this.panel13.Name = "panel13";
+            // 
+            // btnLocalDrivingLicenseApplications
+            // 
+            this.btnLocalDrivingLicenseApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            resources.ApplyResources(this.btnLocalDrivingLicenseApplications, "btnLocalDrivingLicenseApplications");
+            this.btnLocalDrivingLicenseApplications.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLocalDrivingLicenseApplications.Image = global::PresentationLayer.Properties.Resources.TestType_32;
+            this.btnLocalDrivingLicenseApplications.Name = "btnLocalDrivingLicenseApplications";
+            this.btnLocalDrivingLicenseApplications.UseVisualStyleBackColor = false;
+            this.btnLocalDrivingLicenseApplications.Click += new System.EventHandler(this.btnLocalDrivingLicenseApplications_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.button1);
+            resources.ApplyResources(this.panel7, "panel7");
+            this.panel7.Name = "panel7";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::PresentationLayer.Properties.Resources.ApplicationType;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnPeople);
-            this.panel3.Location = new System.Drawing.Point(3, 268);
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(247, 51);
-            this.panel3.TabIndex = 3;
             // 
             // btnPeople
             // 
-            this.btnPeople.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPeople.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnPeople, "btnPeople");
             this.btnPeople.ForeColor = System.Drawing.SystemColors.Control;
             this.btnPeople.Image = global::PresentationLayer.Properties.Resources.group_32;
-            this.btnPeople.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPeople.Location = new System.Drawing.Point(-14, -11);
             this.btnPeople.Name = "btnPeople";
-            this.btnPeople.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnPeople.Size = new System.Drawing.Size(279, 74);
-            this.btnPeople.TabIndex = 3;
-            this.btnPeople.Text = "                    People";
-            this.btnPeople.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPeople.UseVisualStyleBackColor = true;
             this.btnPeople.Click += new System.EventHandler(this.btnPeople_Click);
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnUsers);
-            this.panel5.Location = new System.Drawing.Point(3, 325);
+            resources.ApplyResources(this.panel5, "panel5");
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(247, 51);
-            this.panel5.TabIndex = 5;
             // 
             // btnUsers
             // 
-            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsers.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnUsers, "btnUsers");
             this.btnUsers.ForeColor = System.Drawing.SystemColors.Control;
             this.btnUsers.Image = global::PresentationLayer.Properties.Resources.teamwork_32;
-            this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsers.Location = new System.Drawing.Point(-14, -11);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnUsers.Size = new System.Drawing.Size(279, 74);
-            this.btnUsers.TabIndex = 3;
-            this.btnUsers.Text = "                    Users";
-            this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -258,236 +279,87 @@
             this.pServices.Controls.Add(this.panel14);
             this.pServices.Controls.Add(this.panel15);
             this.pServices.Controls.Add(this.panel16);
-            this.pServices.Location = new System.Drawing.Point(3, 382);
-            this.pServices.MaximumSize = new System.Drawing.Size(272, 170);
-            this.pServices.MinimumSize = new System.Drawing.Size(272, 58);
+            resources.ApplyResources(this.pServices, "pServices");
             this.pServices.Name = "pServices";
-            this.pServices.Size = new System.Drawing.Size(272, 58);
-            this.pServices.TabIndex = 12;
             // 
             // panel14
             // 
             this.panel14.Controls.Add(this.button5);
-            this.panel14.Location = new System.Drawing.Point(1, 114);
+            resources.ApplyResources(this.panel14, "panel14");
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(275, 51);
-            this.panel14.TabIndex = 5;
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.button5, "button5");
             this.button5.ForeColor = System.Drawing.SystemColors.Control;
             this.button5.Image = global::PresentationLayer.Properties.Resources.TestType_32;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(-7, -11);
             this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(279, 74);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "                    Test Type List";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
             // 
             // panel15
             // 
             this.panel15.Controls.Add(this.btnServices);
-            this.panel15.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.panel15, "panel15");
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(266, 51);
-            this.panel15.TabIndex = 2;
             // 
             // btnServices
             // 
             this.btnServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnServices, "btnServices");
             this.btnServices.ForeColor = System.Drawing.SystemColors.Control;
             this.btnServices.Image = global::PresentationLayer.Properties.Resources.LocalDriving_License;
-            this.btnServices.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServices.Location = new System.Drawing.Point(-17, -12);
             this.btnServices.Name = "btnServices";
-            this.btnServices.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnServices.Size = new System.Drawing.Size(288, 74);
-            this.btnServices.TabIndex = 3;
-            this.btnServices.Text = "                    Services";
-            this.btnServices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnServices.UseVisualStyleBackColor = false;
             this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
             // 
             // panel16
             // 
             this.panel16.Controls.Add(this.button7);
-            this.panel16.Location = new System.Drawing.Point(-1, 57);
+            resources.ApplyResources(this.panel16, "panel16");
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(275, 51);
-            this.panel16.TabIndex = 4;
             // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.button7, "button7");
             this.button7.ForeColor = System.Drawing.SystemColors.Control;
             this.button7.Image = global::PresentationLayer.Properties.Resources.New_Driving_License_32;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(-5, -11);
             this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(279, 74);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "                    New Driving License";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
-            // 
-            // pHome
-            // 
-            this.pHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.pHome.Controls.Add(this.panel12);
-            this.pHome.Controls.Add(this.panel2);
-            this.pHome.Controls.Add(this.panel13);
-            this.pHome.Controls.Add(this.panel7);
-            this.pHome.Location = new System.Drawing.Point(3, 204);
-            this.pHome.MaximumSize = new System.Drawing.Size(272, 210);
-            this.pHome.MinimumSize = new System.Drawing.Size(272, 58);
-            this.pHome.Name = "pHome";
-            this.pHome.Size = new System.Drawing.Size(272, 58);
-            this.pHome.TabIndex = 3;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.button4);
-            this.panel12.Location = new System.Drawing.Point(0, 154);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(275, 51);
-            this.panel12.TabIndex = 5;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Image = global::PresentationLayer.Properties.Resources.TestType_32;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-2, -11);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(279, 74);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "                    Test Type List";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnApplications);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 51);
-            this.panel2.TabIndex = 2;
-            // 
-            // btnApplications
-            // 
-            this.btnApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.btnApplications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApplications.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApplications.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnApplications.Image = global::PresentationLayer.Properties.Resources.home_Essentials__32;
-            this.btnApplications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnApplications.Location = new System.Drawing.Point(-19, -12);
-            this.btnApplications.Name = "btnApplications";
-            this.btnApplications.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnApplications.Size = new System.Drawing.Size(288, 74);
-            this.btnApplications.TabIndex = 3;
-            this.btnApplications.Text = "                    Applications";
-            this.btnApplications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnApplications.UseVisualStyleBackColor = false;
-            this.btnApplications.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.button1);
-            this.panel7.Location = new System.Drawing.Point(0, 102);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(275, 51);
-            this.panel7.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Image = global::PresentationLayer.Properties.Resources.ApplicationType;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-2, -11);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(279, 74);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "                    Application Type List";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(3, 446);
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(247, 51);
-            this.panel4.TabIndex = 4;
             // 
             // button3
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.button3, "button3");
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
             this.button3.Image = global::PresentationLayer.Properties.Resources.help_Essentials_32;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(-18, -11);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(279, 74);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "                    Help";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.SystemColors.Control;
-            this.panel11.Location = new System.Drawing.Point(3, 503);
+            resources.ApplyResources(this.panel11, "panel11");
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(270, 1);
-            this.panel11.TabIndex = 13;
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.btnSignOut);
-            this.panel10.Location = new System.Drawing.Point(3, 510);
+            resources.ApplyResources(this.panel10, "panel10");
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(247, 51);
-            this.panel10.TabIndex = 12;
             // 
             // btnSignOut
             // 
-            this.btnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnSignOut, "btnSignOut");
             this.btnSignOut.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSignOut.Image = global::PresentationLayer.Properties.Resources.log_in_32;
-            this.btnSignOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSignOut.Location = new System.Drawing.Point(-23, -11);
             this.btnSignOut.Name = "btnSignOut";
-            this.btnSignOut.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSignOut.Size = new System.Drawing.Size(290, 74);
-            this.btnSignOut.TabIndex = 3;
-            this.btnSignOut.Text = "                    Sign Out";
-            this.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSignOut.UseVisualStyleBackColor = true;
             this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
@@ -504,51 +376,30 @@
             // lblMood
             // 
             this.lblMood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.lblMood.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblMood.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lblMood, "lblMood");
             this.lblMood.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMood.Location = new System.Drawing.Point(270, 0);
             this.lblMood.Name = "lblMood";
-            this.lblMood.Size = new System.Drawing.Size(954, 41);
-            this.lblMood.TabIndex = 4;
-            this.lblMood.Text = "Show Main Menue";
-            this.lblMood.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblExpandedClose
             // 
             this.lblExpandedClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
-            this.lblExpandedClose.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblExpandedClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lblExpandedClose, "lblExpandedClose");
             this.lblExpandedClose.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblExpandedClose.Location = new System.Drawing.Point(270, 41);
             this.lblExpandedClose.Name = "lblExpandedClose";
-            this.lblExpandedClose.Size = new System.Drawing.Size(954, 24);
-            this.lblExpandedClose.TabIndex = 8;
-            this.lblExpandedClose.Text = "<<   Close";
-            this.lblExpandedClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblExpandedClose.Click += new System.EventHandler(this.lblExpanded_Click);
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.panel8.Controls.Add(this.label3);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(270, 768);
+            resources.ApplyResources(this.panel8, "panel8");
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(954, 32);
-            this.panel8.TabIndex = 10;
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label3, "label3");
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(788, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "DVLD System V 0.1 Beta";
             // 
             // timer3
             // 
@@ -557,48 +408,27 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.pictureBox2.Image = global::PresentationLayer.Properties.Resources.cancel_Essentials_32;
-            this.pictureBox2.Location = new System.Drawing.Point(1183, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panel13
+            // comboBox1
             // 
-            this.panel13.Controls.Add(this.btnLocalDrivingLicenseApplications);
-            this.panel13.Location = new System.Drawing.Point(0, 50);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(275, 51);
-            this.panel13.TabIndex = 14;
-            // 
-            // btnLocalDrivingLicenseApplications
-            // 
-            this.btnLocalDrivingLicenseApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.btnLocalDrivingLicenseApplications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocalDrivingLicenseApplications.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocalDrivingLicenseApplications.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLocalDrivingLicenseApplications.Image = global::PresentationLayer.Properties.Resources.TestType_32;
-            this.btnLocalDrivingLicenseApplications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLocalDrivingLicenseApplications.Location = new System.Drawing.Point(-2, -11);
-            this.btnLocalDrivingLicenseApplications.Name = "btnLocalDrivingLicenseApplications";
-            this.btnLocalDrivingLicenseApplications.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnLocalDrivingLicenseApplications.Size = new System.Drawing.Size(279, 74);
-            this.btnLocalDrivingLicenseApplications.TabIndex = 3;
-            this.btnLocalDrivingLicenseApplications.Text = "                    Manage L.D.L.App";
-            this.btnLocalDrivingLicenseApplications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLocalDrivingLicenseApplications.UseVisualStyleBackColor = false;
-            this.btnLocalDrivingLicenseApplications.Click += new System.EventHandler(this.btnLocalDrivingLicenseApplications_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1")});
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // frmShowNewMainMenue
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 800);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.lblExpandedClose);
             this.Controls.Add(this.pictureBox2);
@@ -607,8 +437,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "frmShowNewMainMenue";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmShowNewMainMenue";
             this.Load += new System.EventHandler(this.frmShowNewMainMenue_Load);
             this.flpSideBar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -616,22 +444,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbUserName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel9.ResumeLayout(false);
+            this.pHome.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.pServices.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
-            this.pHome.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel13.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -680,5 +508,6 @@
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button btnLocalDrivingLicenseApplications;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
