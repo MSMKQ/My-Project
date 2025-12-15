@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\frmshownewmainmenue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:frmshownewmainmenue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\applications\\localdrivinglicenseapplications\\controls\\ctrlshowlocaldrivinglicenseapplicationinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicenseapplications\\controls\\ctrlshowlocaldrivinglicenseapplicationinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\frmshownewmainmenue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:frmshownewmainmenue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\applications\\localdrivinglicenseapplications\\frmshowmanagelocaldrivinglicenseapplicationslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicenseapplications\\frmshowmanagelocaldrivinglicenseapplicationslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\applications\\localdrivinglicenseapplications\\frmshowmanagelocaldrivinglicenseapplicationslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicenseapplications\\frmshowmanagelocaldrivinglicenseapplicationslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|c:\\mac\\home\\desktop\\my project\\presentationlayer\\applications\\localdrivinglicenseapplications\\controls\\ctrlshowlocaldrivinglicenseapplicationinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DC3ADC07-E8E9-4555-91C9-8AB6088E172E}|PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicenseapplications\\controls\\ctrlshowlocaldrivinglicenseapplicationinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +18,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmShowNewMainMenue.cs",
-              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\frmShowNewMainMenue.cs",
-              "RelativeDocumentMoniker": "frmShowNewMainMenue.cs",
-              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\frmShowNewMainMenue.cs",
-              "RelativeToolTip": "frmShowNewMainMenue.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAjwM0AAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-13T06:15:22.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmShowNewMainMenue.cs [Design]",
-              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\frmShowNewMainMenue.cs",
-              "RelativeDocumentMoniker": "frmShowNewMainMenue.cs",
-              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\frmShowNewMainMenue.cs [Design]",
-              "RelativeToolTip": "frmShowNewMainMenue.cs [Design]",
+              "Title": "ctrlShowLocalDrivingLicenseApplicationInfo.cs",
+              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\LocalDrivingLicenseApplications\\Controls\\ctrlShowLocalDrivingLicenseApplicationInfo.cs",
+              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseApplications\\Controls\\ctrlShowLocalDrivingLicenseApplicationInfo.cs",
+              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\LocalDrivingLicenseApplications\\Controls\\ctrlShowLocalDrivingLicenseApplicationInfo.cs*",
+              "RelativeToolTip": "Applications\\LocalDrivingLicenseApplications\\Controls\\ctrlShowLocalDrivingLicenseApplicationInfo.cs*",
+              "ViewState": "AgIAABAAAAAAAAAAAAAqwCIAAABzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-13T06:15:18.696Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmShowManageLocalDrivingLicenseApplicationsList.cs",
-              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\LocalDrivingLicenseApplications\\frmShowManageLocalDrivingLicenseApplicationsList.cs",
-              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseApplications\\frmShowManageLocalDrivingLicenseApplicationsList.cs",
-              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\LocalDrivingLicenseApplications\\frmShowManageLocalDrivingLicenseApplicationsList.cs",
-              "RelativeToolTip": "Applications\\LocalDrivingLicenseApplications\\frmShowManageLocalDrivingLicenseApplicationsList.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAKMAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-13T05:26:57.004Z",
+              "WhenOpened": "2025-12-15T22:56:39.23Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmShowManageLocalDrivingLicenseApplicationsList.cs [Design]",
-              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\LocalDrivingLicenseApplications\\frmShowManageLocalDrivingLicenseApplicationsList.cs",
-              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseApplications\\frmShowManageLocalDrivingLicenseApplicationsList.cs",
-              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\LocalDrivingLicenseApplications\\frmShowManageLocalDrivingLicenseApplicationsList.cs [Design]",
-              "RelativeToolTip": "Applications\\LocalDrivingLicenseApplications\\frmShowManageLocalDrivingLicenseApplicationsList.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "ctrlShowLocalDrivingLicenseApplicationInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\LocalDrivingLicenseApplications\\Controls\\ctrlShowLocalDrivingLicenseApplicationInfo.cs",
+              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseApplications\\Controls\\ctrlShowLocalDrivingLicenseApplicationInfo.cs",
+              "ToolTip": "C:\\Mac\\Home\\Desktop\\My Project\\PresentationLayer\\Applications\\LocalDrivingLicenseApplications\\Controls\\ctrlShowLocalDrivingLicenseApplicationInfo.cs [Design]*",
+              "RelativeToolTip": "Applications\\LocalDrivingLicenseApplications\\Controls\\ctrlShowLocalDrivingLicenseApplicationInfo.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-13T05:26:55.727Z",
+              "WhenOpened": "2025-12-15T22:56:35.859Z",
               "EditorCaption": " [Design]"
             }
           ]

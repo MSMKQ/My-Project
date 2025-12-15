@@ -98,6 +98,8 @@
     <Compile Include="ClsPersonDataAccess.cs" />
     <Compile Include="ClsReadingHelper.cs" />
     <Compile Include="ClsAttributes.cs" />
+    <Compile Include="ClsTestAppointmentDataAccess.cs" />
+    <Compile Include="ClsTestDataAccess.cs" />
     <Compile Include="ClsUserDataAccess.cs" />
     <Compile Include="GenericMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

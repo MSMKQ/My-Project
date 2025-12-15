@@ -32,6 +32,7 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications.Control
             lblLocalDrivingLicenseApplicationID.Text = _Local.LocalDrivingLicenseApplicationID.ToString();
             ctrlShowApplicationInfo2.LoadInfo(_Local.ApplicationID);
             lblLicenseClass.Text = _Local.LicenseClassInfo.Title;
+            lblTestsPassed.Text = $" [ 3/{ClsTest.TotalTests(_Local.LocalDrivingLicenseApplicationID).ToString()} ]";
         }
 
         public void LoadInfo(int? LocalDrivingLicenseApplicationID)

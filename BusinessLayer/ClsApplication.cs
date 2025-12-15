@@ -105,5 +105,7 @@ namespace BusinessLayer
         {
             return ClsApplicationDataAccess.UpdateStatus(ApplicationID, (byte)EnStatus.Cancelled);
         }
+
+
     }
 }

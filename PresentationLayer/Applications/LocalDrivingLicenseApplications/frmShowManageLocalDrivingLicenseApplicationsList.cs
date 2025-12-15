@@ -16,6 +16,7 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
         private DataTable _Locals;
 
         public static int SelectedRow;
+        public static ClsTestType.EnTestType TestTypeID;
 
         public frmShowManageLocalDrivingLicenseApplicationsList()
         {
@@ -187,7 +188,10 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             tsmiWrittenTest.Enabled = VisionTestPassed && !WrittenTestPassed;
             tsmiStreetTest.Enabled = VisionTestPassed && WrittenTestPassed && !StreetTestPassed;
 
+            tsmiIssueDrivingLicense.Enabled = VisionTestPassed && WrittenTestPassed && StreetTestPassed && IsEnabled;
 
+            bool IsLicensed = ClsLicense.IsThereLicense(_Local.ApplicationPersonID, _Local.LicenseClassID);
+            tsmiShowLicense.Enabled = IsLicensed;
         }
 
         private void showLocalDrivingLicenseApplicationInfoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -195,6 +199,15 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             if (MdiParent is frmShowNewMainMenue parent)
             {
                 parent.ShowForm(frmShowNewMainMenue.EnForm.ShowLocalDrivingLicenseApplicationInfo);
+            }
+        }
+
+        private void tsmiVisionTest_Click(object sender, EventArgs e)
+        {
+            if (MdiParent is frmShowNewMainMenue parent)
+            {
+                parent.ShowForm(frmShowNewMainMenue.EnForm.VisionTestAppointments);
+                TestTypeID = ClsTestType.EnTestType.VisionTest;
             }
         }
     }

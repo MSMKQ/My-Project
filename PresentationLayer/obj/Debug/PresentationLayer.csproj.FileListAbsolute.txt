@@ -130,3 +130,6 @@ C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.App
 C:\Mac\Home\Desktop\My Project\PresentationLayer\bin\Debug\ar-BH\PresentationLayer.resources.dll
 C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.frmShowNewMainMenue.ar-BH.resources
 C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\ar-BH\PresentationLayer.resources.dll
+C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.TestAppointments.frmShowManageTestAppointmentsList.resources
+C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.TestAppointments.Controls.ctrlShowCreateUpdateTestAppointmentInfo.resources
+C:\Mac\Home\Desktop\My Project\PresentationLayer\obj\Debug\PresentationLayer.TestAppointments.frmShowCreateUpdateTestAppointmentInfo.resources

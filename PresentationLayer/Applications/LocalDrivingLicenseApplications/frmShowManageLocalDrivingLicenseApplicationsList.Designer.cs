@@ -49,11 +49,11 @@
             this.tsmiWrittenTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiStreetTest = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiIssueDrivingLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.showLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.showPersonLicensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowPersonLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCreate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplications)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -160,11 +160,11 @@
             this.toolStripSeparator3,
             this.tsmiScheduleTests,
             this.toolStripSeparator4,
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem,
+            this.tsmiIssueDrivingLicense,
             this.toolStripSeparator5,
-            this.showLicenseToolStripMenuItem,
+            this.tsmiShowLicense,
             this.toolStripSeparator6,
-            this.showPersonLicensesToolStripMenuItem});
+            this.tsmiShowPersonLicense});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(269, 344);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
@@ -239,6 +239,7 @@
             this.tsmiVisionTest.Name = "tsmiVisionTest";
             this.tsmiVisionTest.Size = new System.Drawing.Size(153, 38);
             this.tsmiVisionTest.Text = "Vision Test";
+            this.tsmiVisionTest.Click += new System.EventHandler(this.tsmiVisionTest_Click);
             // 
             // tsmiWrittenTest
             // 
@@ -261,39 +262,39 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(265, 6);
             // 
-            // issueDrivingLicenseFirstTimeToolStripMenuItem
+            // tsmiIssueDrivingLicense
             // 
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.IssueDrivingLicense_32;
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Name = "issueDrivingLicenseFirstTimeToolStripMenuItem";
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Text = "Issue Driving License ( First Time )";
+            this.tsmiIssueDrivingLicense.Image = global::PresentationLayer.Properties.Resources.IssueDrivingLicense_32;
+            this.tsmiIssueDrivingLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmiIssueDrivingLicense.Name = "tsmiIssueDrivingLicense";
+            this.tsmiIssueDrivingLicense.Size = new System.Drawing.Size(268, 38);
+            this.tsmiIssueDrivingLicense.Text = "Issue Driving License ( First Time )";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(265, 6);
             // 
-            // showLicenseToolStripMenuItem
+            // tsmiShowLicense
             // 
-            this.showLicenseToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.License_View_32;
-            this.showLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
-            this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
-            this.showLicenseToolStripMenuItem.Text = "Show License";
+            this.tsmiShowLicense.Image = global::PresentationLayer.Properties.Resources.License_View_32;
+            this.tsmiShowLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmiShowLicense.Name = "tsmiShowLicense";
+            this.tsmiShowLicense.Size = new System.Drawing.Size(268, 38);
+            this.tsmiShowLicense.Text = "Show License";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(265, 6);
             // 
-            // showPersonLicensesToolStripMenuItem
+            // tsmiShowPersonLicense
             // 
-            this.showPersonLicensesToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.PersonLicenseHistory_32;
-            this.showPersonLicensesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.showPersonLicensesToolStripMenuItem.Name = "showPersonLicensesToolStripMenuItem";
-            this.showPersonLicensesToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
-            this.showPersonLicensesToolStripMenuItem.Text = "Show Person License History";
+            this.tsmiShowPersonLicense.Image = global::PresentationLayer.Properties.Resources.PersonLicenseHistory_32;
+            this.tsmiShowPersonLicense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsmiShowPersonLicense.Name = "tsmiShowPersonLicense";
+            this.tsmiShowPersonLicense.Size = new System.Drawing.Size(268, 38);
+            this.tsmiShowPersonLicense.Text = "Show Person License History";
             // 
             // btnCreate
             // 
@@ -347,10 +348,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiWrittenTest;
         private System.Windows.Forms.ToolStripMenuItem tsmiStreetTest;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem issueDrivingLicenseFirstTimeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiIssueDrivingLicense;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem showLicenseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowLicense;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripMenuItem showPersonLicensesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowPersonLicense;
     }
 }

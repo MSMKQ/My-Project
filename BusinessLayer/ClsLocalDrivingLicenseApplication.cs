@@ -20,6 +20,8 @@ namespace BusinessLayer
 
         public ClsLicenseClass LicenseClassInfo;
 
+        public string FullName {  get { return ClsPerson.GetInfoByID(ApplicationPersonID).FullName; } }
+
         public ClsLocalDrivingLicenseApplication()
         {
             LocalDrivingLicenseApplicationID = null;
@@ -119,7 +121,7 @@ namespace BusinessLayer
         {
             return ClsLocalDrivingLicenseApplicationDataAccess.DoesPassedTest(LocalDrivingLicenseApplicationID, (byte)TestTypeID);
         }
-        
+
 
     }
 }

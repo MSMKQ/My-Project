@@ -5,6 +5,7 @@ using PresentationLayer.Classes;
 using PresentationLayer.InterFaces;
 using PresentationLayer.People;
 using PresentationLayer.Properties;
+using PresentationLayer.TestAppointments;
 using PresentationLayer.TestTypes;
 using PresentationLayer.Users;
 using System;
@@ -28,9 +29,9 @@ namespace PresentationLayer
         private bool _ServicesCollapsible = true;
         private Dictionary<string, Form> _ChildForm = new Dictionary<string, Form>();
 
-        public enum  EnForm 
+        public enum EnForm
         {
-            ManagePeople , Dashboard , PersonInfo , CreatePerson , UpdatePerson , ManageUsers , Login , UserInfo , CreateUser , UpdateUser , UserChangePassword, FindPerson , ManageApplicationType , CreateApplicationTypeInfo , UpdateApplicationTypeInfo , ManageTestTypes , CreateTestTypeInfo , UpdateTestTypeInfo , ManageLocalDrivingLicenseApplications, CreateLocalDrivingLicenseApplicationInfo, UpdateLocalDrivingLicenseApplicationInfo ,ShowLocalDrivingLicenseApplicationInfo
+            ManagePeople, Dashboard, PersonInfo, CreatePerson, UpdatePerson, ManageUsers, Login, UserInfo, CreateUser, UpdateUser, UserChangePassword, FindPerson, ManageApplicationType, CreateApplicationTypeInfo, UpdateApplicationTypeInfo, ManageTestTypes, CreateTestTypeInfo, UpdateTestTypeInfo, ManageLocalDrivingLicenseApplications, CreateLocalDrivingLicenseApplicationInfo, UpdateLocalDrivingLicenseApplicationInfo, ShowLocalDrivingLicenseApplicationInfo, VisionTestAppointments , WrittenTestAppointments , StreetTestAppointments , CreateTestAppointment , UpdateTestAppointmentInfo,
         }
 
         private Form _PushForm(EnForm enform)
@@ -97,6 +98,21 @@ namespace PresentationLayer
                 case EnForm.ShowLocalDrivingLicenseApplicationInfo:
                     return new frmShowLocalDrivingLicenseApplicationInfo(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow);
 
+                case EnForm.VisionTestAppointments:
+                    return new TestAppointments.frmShowManageTestAppointmentsList(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow);
+
+                case EnForm.WrittenTestAppointments:
+                    return new TestAppointments.frmShowManageTestAppointmentsList(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow);
+
+                case EnForm.StreetTestAppointments:
+                    return new TestAppointments.frmShowManageTestAppointmentsList(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow);
+
+                case EnForm.CreateTestAppointment:
+                    return new TestAppointments.frmShowCreateUpdateTestAppointmentInfo(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow, frmShowManageLocalDrivingLicenseApplicationsList.TestTypeID);
+
+                case EnForm.UpdateTestAppointmentInfo:
+                    return new TestAppointments.frmShowCreateUpdateTestAppointmentInfo(frmShowManageTestAppointmentsList.SelectedRow, frmShowManageLocalDrivingLicenseApplicationsList.TestTypeID);
+
                 case EnForm.Login:
                     return new Logins.frmShowLoginInfo();
 
@@ -131,7 +147,7 @@ namespace PresentationLayer
                         row = frmShowManageApplicationTypesList.SelectedRow;
                     else if (OutForm is frmShowCreateUpdateTestTypeInfo)
                         row = frmShowManageTestTypeList.SelectdRow;
-                    else if (OutForm is frmShowCreateUpdateLocalDrivingLicenseApplicationInfo || OutForm is frmShowLocalDrivingLicenseApplicationInfo)
+                    else if (OutForm is frmShowCreateUpdateLocalDrivingLicenseApplicationInfo || OutForm is frmShowLocalDrivingLicenseApplicationInfo || OutForm is frmShowManageTestAppointmentsList)
                         row = frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow;
 
                     loadable.LoadInfo(row);
@@ -337,7 +353,6 @@ namespace PresentationLayer
         {
             ShowForm(EnForm.ManageLocalDrivingLicenseApplications);
         }
-
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
