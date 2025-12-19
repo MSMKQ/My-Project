@@ -38,7 +38,7 @@ namespace PresentationLayer.Applications.Controls
             lblApplicationPersonID.Text = _Application.PersonInfo.FullName;
             lblApplicationDate.Text = _Application.ApplicationDate.Value.ToShortDateString();
             lblApplicationTypeID.Text = _Application.ApplicationTypeInfo.Title;
-            lblApplicationStatus.Text = _Application.ApplicationStatus.ToString();
+            lblApplicationStatus.Text = _Application.ApplicationStatusText.ToString();
             lblLastStatusDate.Text = _Application.LastStatusDate.Value.ToShortDateString();
             lblPaidFees.Text = _Application.PaidFees.Value.ToString("N3");
             lblCreatedByUserID.Text = _Application.CreatedByInfo.Username;

@@ -6,6 +6,8 @@ using PresentationLayer.InterFaces;
 using PresentationLayer.People;
 using PresentationLayer.Properties;
 using PresentationLayer.TestAppointments;
+using PresentationLayer.Tests;
+using PresentationLayer.Tests.Controls;
 using PresentationLayer.TestTypes;
 using PresentationLayer.Users;
 using System;
@@ -31,7 +33,7 @@ namespace PresentationLayer
 
         public enum EnForm
         {
-            ManagePeople, Dashboard, PersonInfo, CreatePerson, UpdatePerson, ManageUsers, Login, UserInfo, CreateUser, UpdateUser, UserChangePassword, FindPerson, ManageApplicationType, CreateApplicationTypeInfo, UpdateApplicationTypeInfo, ManageTestTypes, CreateTestTypeInfo, UpdateTestTypeInfo, ManageLocalDrivingLicenseApplications, CreateLocalDrivingLicenseApplicationInfo, UpdateLocalDrivingLicenseApplicationInfo, ShowLocalDrivingLicenseApplicationInfo, VisionTestAppointments , WrittenTestAppointments , StreetTestAppointments , CreateTestAppointment , UpdateTestAppointmentInfo,
+            ManagePeople, Dashboard, PersonInfo, CreatePerson, UpdatePerson, ManageUsers, Login, UserInfo, CreateUser, UpdateUser, UserChangePassword, FindPerson, ManageApplicationType, CreateApplicationTypeInfo, UpdateApplicationTypeInfo, ManageTestTypes, CreateTestTypeInfo, UpdateTestTypeInfo, ManageLocalDrivingLicenseApplications, CreateLocalDrivingLicenseApplicationInfo, UpdateLocalDrivingLicenseApplicationInfo, ShowLocalDrivingLicenseApplicationInfo, VisionTestAppointments , WrittenTestAppointments , StreetTestAppointments , CreateTestAppointment , UpdateTestAppointmentInfo, TakeTestInfo 
         }
 
         private Form _PushForm(EnForm enform)
@@ -111,7 +113,10 @@ namespace PresentationLayer
                     return new TestAppointments.frmShowCreateUpdateTestAppointmentInfo(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow, frmShowManageLocalDrivingLicenseApplicationsList.TestTypeID);
 
                 case EnForm.UpdateTestAppointmentInfo:
-                    return new TestAppointments.frmShowCreateUpdateTestAppointmentInfo(frmShowManageTestAppointmentsList.SelectedRow, frmShowManageLocalDrivingLicenseApplicationsList.TestTypeID);
+                    return new TestAppointments.frmShowCreateUpdateTestAppointmentInfo(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow, frmShowManageLocalDrivingLicenseApplicationsList.TestTypeID, frmShowManageTestAppointmentsList.SelectedRow);
+
+                case EnForm.TakeTestInfo:
+                    return new Tests.frmShowTakeTestInfo(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow, frmShowManageTestAppointmentsList.SelectedRow, frmShowManageLocalDrivingLicenseApplicationsList.TestTypeID);
 
                 case EnForm.Login:
                     return new Logins.frmShowLoginInfo();
@@ -149,9 +154,21 @@ namespace PresentationLayer
                         row = frmShowManageTestTypeList.SelectdRow;
                     else if (OutForm is frmShowCreateUpdateLocalDrivingLicenseApplicationInfo || OutForm is frmShowLocalDrivingLicenseApplicationInfo || OutForm is frmShowManageTestAppointmentsList)
                         row = frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow;
+                     
 
                     loadable.LoadInfo(row);
                 }
+                
+                if (OutForm is frmShowTakeTestInfo frm)
+                {
+                    frm.LoadInfo(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow, frmShowManageTestAppointmentsList.SelectedRow, frmShowManageLocalDrivingLicenseApplicationsList.TestTypeID);
+                }
+
+                if (OutForm is frmShowCreateUpdateTestAppointmentInfo frm1)
+                {
+                    frm1.LoadInfo(frmShowManageLocalDrivingLicenseApplicationsList.SelectedRow, frmShowManageLocalDrivingLicenseApplicationsList.TestTypeID, frmShowManageTestAppointmentsList.SelectedRow);
+                }
+                
 
                 Text = OutForm.Text;
                 lblMood.Text = OutForm.Text;
@@ -366,8 +383,6 @@ namespace PresentationLayer
                 lblExpandedClose.Text = (comboBox1.Text.Equals("Arabic")) ? "<<   افتح" : "<<   Open";
 
             }
-
-
         }
     }
 }

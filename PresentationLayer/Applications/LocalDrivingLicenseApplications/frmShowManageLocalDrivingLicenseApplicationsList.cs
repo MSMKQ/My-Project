@@ -172,7 +172,7 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
                 return;
             }
 
-            bool IsEnabled = (_Local.ApplicationStatus == (byte)ClsApplication.EnStatus.New);
+            bool IsEnabled = (_Local.ApplicationStatus == ClsApplication.EnStatus.New);
 
             tsmiUpdateApplication.Enabled = IsEnabled;
             tsmiShowDelete.Enabled = IsEnabled;
@@ -182,7 +182,7 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             bool WrittenTestPassed = _Local.DoesPassedTest(ClsTestType.EnTestType.WrittenTest);
             bool StreetTestPassed = _Local.DoesPassedTest(ClsTestType.EnTestType.StreetTest);
 
-            tsmiScheduleTests.Enabled = !VisionTestPassed && !WrittenTestPassed && !StreetTestPassed && IsEnabled;
+            tsmiScheduleTests.Enabled = !VisionTestPassed || !WrittenTestPassed || StreetTestPassed || IsEnabled;
 
             tsmiVisionTest.Enabled = !VisionTestPassed;
             tsmiWrittenTest.Enabled = VisionTestPassed && !WrittenTestPassed;
@@ -208,6 +208,15 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             {
                 parent.ShowForm(frmShowNewMainMenue.EnForm.VisionTestAppointments);
                 TestTypeID = ClsTestType.EnTestType.VisionTest;
+            }
+        }
+
+        private void tsmiWrittenTest_Click(object sender, EventArgs e)
+        {
+            if ( MdiParent is frmShowNewMainMenue parent)
+            {
+                parent.ShowForm(frmShowNewMainMenue.EnForm.WrittenTestAppointments);
+                TestTypeID = ClsTestType.EnTestType.WrittenTest;
             }
         }
     }

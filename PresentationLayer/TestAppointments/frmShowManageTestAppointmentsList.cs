@@ -137,7 +137,7 @@ namespace PresentationLayer.TestAppointments
             _Records();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             if (ClsTestAppointment.IsThereAnActiveAppointment(_LocalDrivingLicenseApplicationID, _SelectedRow().Value))
             {
@@ -157,6 +157,22 @@ namespace PresentationLayer.TestAppointments
             if (MdiParent is frmShowNewMainMenue parent)
             {
                 parent.ShowForm(frmShowNewMainMenue.EnForm.ManageLocalDrivingLicenseApplications);
+            }
+        }
+
+        private void showUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ( MdiParent is frmShowNewMainMenue parent )
+            {
+                parent.ShowForm(frmShowNewMainMenue.EnForm.UpdateTestAppointmentInfo);
+            }
+        }
+
+        private void showTakeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ( MdiParent is frmShowNewMainMenue parent)
+            {
+                parent.ShowForm(frmShowNewMainMenue.EnForm.TakeTestInfo);
             }
         }
     }

@@ -20,7 +20,27 @@ namespace BusinessLayer
         public int? ApplicationPersonID { get; set; }
         public DateTime? ApplicationDate { get; set; }
         public int? ApplicationTypeID { get; set; }
-        public byte? ApplicationStatus { get; set; }
+        public EnStatus? ApplicationStatus { get; set; }
+        public string ApplicationStatusText 
+        {
+            get
+            {
+                switch (ApplicationStatus)
+                {
+                    case EnStatus.New:
+                        return "New";
+
+                    case EnStatus.Cancelled:
+                        return "Cancelled";
+
+                    case EnStatus.Compeleted:
+                        return "Compeleted";
+
+                    default:
+                        return "Unknown";
+                }
+            }
+        }
         public DateTime? LastStatusDate { get; set; }
         public decimal? PaidFees { get; set; }
         public int? CreatedByUserID { get; set; }

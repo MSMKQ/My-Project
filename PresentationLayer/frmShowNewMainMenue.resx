@@ -313,7 +313,7 @@
     <value>30, 0, 0, 0</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 74</value>
+    <value>291, 74</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -340,7 +340,7 @@
     <value>3, 147</value>
   </data>
   <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 51</value>
+    <value>280, 51</value>
   </data>
   <data name="panel9.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -640,7 +640,7 @@
     <value>30, 0, 0, 0</value>
   </data>
   <data name="btnPeople.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 74</value>
+    <value>291, 74</value>
   </data>
   <data name="btnPeople.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -667,7 +667,7 @@
     <value>3, 268</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 51</value>
+    <value>279, 51</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -683,66 +683,6 @@
   </data>
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="btnUsers.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnUsers.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt, style=Bold</value>
-  </data>
-  <data name="btnUsers.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnUsers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-14, -11</value>
-  </data>
-  <data name="btnUsers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>30, 0, 0, 0</value>
-  </data>
-  <data name="btnUsers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 74</value>
-  </data>
-  <data name="btnUsers.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnUsers.Text" xml:space="preserve">
-    <value>                    Users</value>
-  </data>
-  <data name="btnUsers.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnUsers.Name" xml:space="preserve">
-    <value>btnUsers</value>
-  </data>
-  <data name="&gt;&gt;btnUsers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnUsers.Parent" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;btnUsers.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 325</value>
-  </data>
-  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 51</value>
-  </data>
-  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
-    <value>flpSideBar</value>
-  </data>
-  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="button5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -925,7 +865,7 @@
     <value>2</value>
   </data>
   <data name="pServices.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 382</value>
+    <value>3, 325</value>
   </data>
   <data name="pServices.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>272, 170</value>
@@ -949,6 +889,69 @@
     <value>flpSideBar</value>
   </data>
   <data name="&gt;&gt;pServices.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnUsers.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnUsers.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnUsers.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnUsers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnUsers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-14, -11</value>
+  </data>
+  <data name="btnUsers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>30, 0, 0, 0</value>
+  </data>
+  <data name="btnUsers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 74</value>
+  </data>
+  <data name="btnUsers.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnUsers.Text" xml:space="preserve">
+    <value>                    Users</value>
+  </data>
+  <data name="btnUsers.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnUsers.Name" xml:space="preserve">
+    <value>btnUsers</value>
+  </data>
+  <data name="&gt;&gt;btnUsers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUsers.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;btnUsers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 389</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 51</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>flpSideBar</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -967,7 +970,7 @@
     <value>30, 0, 0, 0</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 74</value>
+    <value>297, 74</value>
   </data>
   <data name="button3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -994,7 +997,7 @@
     <value>3, 446</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 51</value>
+    <value>279, 51</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1048,7 +1051,7 @@
     <value>30, 0, 0, 0</value>
   </data>
   <data name="btnSignOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 74</value>
+    <value>341, 74</value>
   </data>
   <data name="btnSignOut.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1075,7 +1078,7 @@
     <value>3, 510</value>
   </data>
   <data name="panel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 51</value>
+    <value>279, 51</value>
   </data>
   <data name="panel10.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>

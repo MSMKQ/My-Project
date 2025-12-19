@@ -45,6 +45,7 @@ namespace BusinessLayer
             LicenseClassID = _Local.LicenseClassID;
 
             LicenseClassInfo = ClsLicenseClass.GetInfoByID(_Local.LicenseClassID);
+            
             _Mood = EnMood.Update;
         }
 
@@ -120,6 +121,11 @@ namespace BusinessLayer
         public bool DoesPassedTest(ClsTestType.EnTestType TestTypeID)
         {
             return ClsLocalDrivingLicenseApplicationDataAccess.DoesPassedTest(LocalDrivingLicenseApplicationID, (byte)TestTypeID);
+        }
+
+        public bool DoesAttendedTest(ClsTestType.EnTestType TestTypeID)
+        {
+            return ClsTest.DoesAttendedTest(LocalDrivingLicenseApplicationID, TestTypeID);
         }
 
 

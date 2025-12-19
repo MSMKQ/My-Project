@@ -160,7 +160,7 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             _LocalDrivingLicenseApplication.ApplicationPersonID = _SelectedPersonID;
             _LocalDrivingLicenseApplication.ApplicationDate = DateTime.Now;
             _LocalDrivingLicenseApplication.ApplicationTypeID = (int)ClsApplicationType.EnServices.NewLocalDriving;
-            _LocalDrivingLicenseApplication.ApplicationStatus = (int)ClsApplication.EnStatus.New;
+            _LocalDrivingLicenseApplication.ApplicationStatus = ClsApplication.EnStatus.New;
             _LocalDrivingLicenseApplication.LastStatusDate = DateTime.Now;
             _LocalDrivingLicenseApplication.PaidFees = ClsApplicationType.GetInfoByID(ClsApplicationType.EnServices.NewLocalDriving).Fees.Value;
             _LocalDrivingLicenseApplication.CreatedByUserID = ClsGlobal.CurrentUser.UserID;

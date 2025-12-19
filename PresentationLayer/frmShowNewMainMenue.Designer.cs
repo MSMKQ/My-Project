@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShowNewMainMenue));
             this.flpSideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
@@ -72,7 +73,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.flpSideBar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserName)).BeginInit();
@@ -102,8 +102,8 @@
             this.flpSideBar.Controls.Add(this.panel9);
             this.flpSideBar.Controls.Add(this.pHome);
             this.flpSideBar.Controls.Add(this.panel3);
-            this.flpSideBar.Controls.Add(this.panel5);
             this.flpSideBar.Controls.Add(this.pServices);
+            this.flpSideBar.Controls.Add(this.panel5);
             this.flpSideBar.Controls.Add(this.panel4);
             this.flpSideBar.Controls.Add(this.panel11);
             this.flpSideBar.Controls.Add(this.panel10);
@@ -120,6 +120,16 @@
             this.panel1.Controls.Add(this.pictureBox1);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1")});
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // panel6
             // 
@@ -414,16 +424,6 @@
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items"),
-            resources.GetString("comboBox1.Items1")});
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // frmShowNewMainMenue
             // 

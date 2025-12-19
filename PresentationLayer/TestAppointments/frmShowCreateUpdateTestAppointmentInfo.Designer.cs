@@ -30,8 +30,8 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.ctrlShowCreateUpdateTestAppointmentInfo1 = new PresentationLayer.TestAppointments.Controls.ctrlShowCreateUpdateTestAppointmentInfo();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,16 @@
             this.panel1.Size = new System.Drawing.Size(474, 614);
             this.panel1.TabIndex = 0;
             // 
+            // ctrlShowCreateUpdateTestAppointmentInfo1
+            // 
+            this.ctrlShowCreateUpdateTestAppointmentInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrlShowCreateUpdateTestAppointmentInfo1.Location = new System.Drawing.Point(0, 0);
+            this.ctrlShowCreateUpdateTestAppointmentInfo1.Name = "ctrlShowCreateUpdateTestAppointmentInfo1";
+            this.ctrlShowCreateUpdateTestAppointmentInfo1.Padding = new System.Windows.Forms.Padding(10);
+            this.ctrlShowCreateUpdateTestAppointmentInfo1.Size = new System.Drawing.Size(472, 612);
+            this.ctrlShowCreateUpdateTestAppointmentInfo1.TabIndex = 2;
+            this.ctrlShowCreateUpdateTestAppointmentInfo1.TestTypeID = BusinessLayer.ClsTestType.EnTestType.VisionTest;
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -77,16 +87,6 @@
             this.label1.Text = "<< Back";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // ctrlShowCreateUpdateTestAppointmentInfo1
-            // 
-            this.ctrlShowCreateUpdateTestAppointmentInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctrlShowCreateUpdateTestAppointmentInfo1.Location = new System.Drawing.Point(0, 0);
-            this.ctrlShowCreateUpdateTestAppointmentInfo1.Name = "ctrlShowCreateUpdateTestAppointmentInfo1";
-            this.ctrlShowCreateUpdateTestAppointmentInfo1.Padding = new System.Windows.Forms.Padding(10);
-            this.ctrlShowCreateUpdateTestAppointmentInfo1.Size = new System.Drawing.Size(472, 612);
-            this.ctrlShowCreateUpdateTestAppointmentInfo1.TabIndex = 2;
-            this.ctrlShowCreateUpdateTestAppointmentInfo1.TestTypeID = BusinessLayer.ClsTestType.EnTestType.VisionTest;
-            // 
             // frmShowCreateUpdateTestAppointmentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,7 +94,8 @@
             this.ClientSize = new System.Drawing.Size(605, 643);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmShowCreateUpdateTestAppointmentInfo";
-            this.Text = "Show Create New Test Appointment Info";
+            this.Text = "Mood";
+            this.Load += new System.EventHandler(this.frmShowCreateUpdateTestAppointmentInfo_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

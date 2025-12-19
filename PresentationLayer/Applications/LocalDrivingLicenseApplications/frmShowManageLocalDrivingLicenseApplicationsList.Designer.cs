@@ -166,7 +166,7 @@
             this.toolStripSeparator6,
             this.tsmiShowPersonLicense});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(269, 344);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(269, 366);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showLocalDrivingLicenseApplicationInfoToolStripMenuItem
@@ -237,7 +237,7 @@
             this.tsmiVisionTest.Image = global::PresentationLayer.Properties.Resources.Vision_Test_32;
             this.tsmiVisionTest.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmiVisionTest.Name = "tsmiVisionTest";
-            this.tsmiVisionTest.Size = new System.Drawing.Size(153, 38);
+            this.tsmiVisionTest.Size = new System.Drawing.Size(196, 38);
             this.tsmiVisionTest.Text = "Vision Test";
             this.tsmiVisionTest.Click += new System.EventHandler(this.tsmiVisionTest_Click);
             // 
@@ -246,15 +246,16 @@
             this.tsmiWrittenTest.Image = global::PresentationLayer.Properties.Resources.Written_Test_32;
             this.tsmiWrittenTest.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmiWrittenTest.Name = "tsmiWrittenTest";
-            this.tsmiWrittenTest.Size = new System.Drawing.Size(153, 38);
+            this.tsmiWrittenTest.Size = new System.Drawing.Size(196, 38);
             this.tsmiWrittenTest.Text = "Written Test";
+            this.tsmiWrittenTest.Click += new System.EventHandler(this.tsmiWrittenTest_Click);
             // 
             // tsmiStreetTest
             // 
             this.tsmiStreetTest.Image = global::PresentationLayer.Properties.Resources.Street_Test_32;
             this.tsmiStreetTest.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsmiStreetTest.Name = "tsmiStreetTest";
-            this.tsmiStreetTest.Size = new System.Drawing.Size(153, 38);
+            this.tsmiStreetTest.Size = new System.Drawing.Size(196, 38);
             this.tsmiStreetTest.Text = "Street Test";
             // 
             // toolStripSeparator4

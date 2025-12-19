@@ -22,7 +22,7 @@ namespace DataAccessLayer
 
         public static IEnumerable<PropertyInfo> GetMappedProperties<T>()
         {
-            return typeof(T).GetProperties().Where(p => p.CanWrite && p.PropertyType.IsPrimitive || p.PropertyType.IsEnum || p.PropertyType == typeof(string) || Nullable.GetUnderlyingType(p.PropertyType) != null);
+            return typeof(T).GetProperties().Where(p => p.CanWrite && p.PropertyType.IsPrimitive || p.PropertyType.IsEnum || p.PropertyType == typeof(string) || Nullable.GetUnderlyingType(p.PropertyType) != null && !Attribute.IsDefined(p, typeof(ClsIgnoreAttribute)));
         }
 
         public static string BuildInsertQuery<T>(T obj)
@@ -38,13 +38,15 @@ namespace DataAccessLayer
             string table = AttributeTable.Name;
             string IdColumn = KeyProp.Name;
 
-            var props = GetMappedProperties<T>().Where(p => p.Name != IdColumn);
+            var props = GetMappedProperties<T>().Where(p => p.Name != IdColumn );
 
             string columns = string.Join(", ", props.Select(p => p.Name));
             string values = string.Join(", ", props.Select(p => $"@{p.Name}"));
 
             if (table == "LocalDrivingLicenseApplications")
                 return $"INSERT INTO {table}(ApplicationID, LicenseClassID) VALUES(@ApplicationID, @LicenseClassID); SELECT LAST_INSERT_ID();";
+            else if (table == "Tests")
+                return $"INSERT INTO {table}({columns}) VALUES({values}); UPDATE TestAppointments SET IsLocked = 1 WHERE TestAppointmentID = @TestAppointmentID;SELECT LAST_INSERT_ID();";
             else
                 return $"INSERT INTO {table}({columns}) VALUES({values}); SELECT LAST_INSERT_ID();";
         }
